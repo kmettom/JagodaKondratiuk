@@ -1,0 +1,19 @@
+
+$blue: #282f40;
+$white: #e2e2e2;
+// $grey: #e2e2e2;
+
+$easein: cubic-bezier(.28,.4,.49,.97);
+
+@mixin respond-width($media) {
+     @media (max-width: $media + 1px){
+        @content;
+    }
+}
+
+$w-xl: 1650px; // resolution just under 1920
+$w-l: 1450px; // resolution above 1366
+$w-m: 1280px; // ipad big resolution
+$w-m-s: 1024px; // ipad big resolution
+$w-s: 768px; // ipad small resolution
+$w-xs: 550px; // mobile resolution

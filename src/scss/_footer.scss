@@ -1,0 +1,96 @@
+
+
+/*
+-------------------------CONTACT------------------------------- */
+
+.contact {
+  padding-top: 150px;
+  text-align: right;
+  @include respond-width($w-m){
+    padding-top: 100px;
+  }
+  @include respond-width($w-s){
+    padding-top: 50px;
+  }
+  @include respond-width($w-xs){
+    padding-top: 0px;
+  }
+  a {
+    font-family: "Monument";
+    font-size: 50px;
+    color: #e2e2e2;
+    text-decoration: none;
+    text-align: right;
+    @include respond-width($w-l){
+      font-size: 35px;
+    }
+    @include respond-width($w-xs){
+      font-size: 30px;
+    }
+  }
+}
+
+/*
+-------------------------RIGHTS------------------------------- */
+
+
+.rights-main {
+  font-family: "Ogg";
+  font-size: 15px;
+  line-height: 200%;
+  padding-top: 75px;
+  padding-bottom: 15px;
+  @include respond-width($w-m-s){
+    margin-bottom: 300;
+  }
+  @include respond-width($w-s){
+    font-size: 13px;
+  }
+  a {
+    color: #e2e2e2;
+    text-decoration: none;
+  }
+  .Tomasz {
+    float: right;
+    @include respond-width($w-xs){
+      float: none;
+      display: block;
+    }
+  }
+}
+
+
+/*
+-------------------------FOOTER------------------------------- */
+
+.footer{
+  background: $blue;
+  height: 20vh;
+  // min-height: 125px;
+  color: $white;
+  position: relative;
+  text-align:center;
+  display: block;
+  overflow: hidden;
+  .to-top-link{
+    font-family: "Monument";
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 50px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translate(0 , -50%);
+    right: 0px;
+    left: 0px;
+    width: max-content;
+    @include respond-width($w-s){
+      font-size: 35px;
+    }
+    @include respond-width($w-xs){
+      // min-height: 80px;
+      font-size: 23px;
+    }
+  }
+}

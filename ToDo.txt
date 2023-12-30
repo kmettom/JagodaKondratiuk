@@ -1,0 +1,58 @@
+
+1.
+
+CURSOR TEST BACKUP
+https://codepen.io/kmettom/pen/abvVOzd
+
+
+Animations benchmark BACKUP
+https://sam-phlix.com/?ref=lapaninja
+
+
+2.
+
+
+3.
+
+
+4.
+
+
+
+
+5.
+
+
+6.
+
+------Notes----------------Notes----------------------Notes-----------------------Notes---------------------
+
+TRANSITIONS
+
+- animation in - text letters animate it
+- first grey BG, overlay from bottom to up BLUE, then text by LINES in order 1,2,3,4, AFTER top bar info OPACITY appear
+
+- on scroll the big letters to the side remove
+
+- me-photo show with overlay animation
+- me-photo text apper just opacity
+
+
+- about me sekcia - opacity in + top section by section (paragraph)
+- about me 2020 - line by line as HEADER
+- about me 2020 - fixed to top on scroll
+
+
+- PROJECTS - lines animate in from the left
+SERIF - only opacity animate in
+project name animate in as header
+
+
+GENERAL RULE
+ - SERIF - only animate opacity in
+ - BOLD text as HEADER
+
+ SLOW SCROLL
+
+ --------------------------------------------------------------------------------------------
+ https://scrollmagic.io/

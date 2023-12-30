@@ -1,0 +1,140 @@
+
+/*
+-------------------------MENU------------------------------- */
+
+.menu {
+  font-family: "Ogg";
+  font-weight: 100;
+  font-size: 1em;
+  opacity: 0;
+  transition: $easein opacity 0s;
+  height: 70px;
+  @include respond-width($w-xs){
+    font-size: 0.8em;
+  }
+
+  .menu-text {
+    padding: 0px;
+    padding-top: 40px;
+    margin: 0px;
+    @include respond-width($w-xs){
+      padding-top: 20px;
+    }
+  }
+
+  .lata1 {
+    position: relative;
+    text-align: left;
+  }
+
+  .line {
+    display: inline-block;
+    width: 100px;
+    margin-left: 30px;
+    @include respond-width($w-s){
+      width: 75px;
+    }
+    @include respond-width($w-xs){
+      display: none;
+    }
+    &:after{
+      transition: $easein all 0.5s;
+      transition-delay: 1.3s;
+      content: "";
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 0%;
+      height: 1px;
+      background: #e2e2e2;
+      position: relative;
+      @include respond-width($w-s){
+        width: 0px;
+      }
+      @include respond-width($w-xs){
+        content: none;
+      }
+    }
+  }
+  .lata1 .line{
+    width: 25px;
+  }
+
+  .amsterdam {
+    padding-right: 100px;
+    @include respond-width($w-s){
+      padding-right: 50px;
+    }
+    @include respond-width($w-xs){
+      padding-right: 10px;
+    }
+  }
+
+  &.activate{
+    transition: $easein opacity 0.5s;
+    transition-delay: 1s;
+    opacity: 1;
+    .line:after{
+      width: 100%;
+    }
+
+  }
+
+
+
+  .align-right {
+    float: right;
+  }
+}
+
+
+/*
+-------------------------HEADER-SVG------------------------------- */
+
+.header{
+  height: calc(100vh - 70px); // minus header height
+  opacity: 0;
+  @include respond-width($w-s){
+    height: calc(70vh - 70px); // minus header height
+  }
+  .main-text-wrapper{
+      position: relative;
+      margin: 0 auto;
+      top: 50%;
+      transform: translate( 0 , -50%);
+      right: 0px;
+      left: 0px;
+  }
+  &.activate{
+    opacity: 1;
+    svg{
+      &:nth-child(1) path{
+        transition-delay: 0s;
+      }
+      &:nth-child(2) path{
+        transition-delay: 0.2s;
+      }
+      &:nth-child(3) path{
+        transition-delay: 0.4s;
+      }
+      &:nth-child(4) path{
+        transition-delay: 0.6s;
+      }
+      path{
+        transform: translate(0,0px);
+      }
+    }
+  }
+  svg {
+    width: 100%;
+    path{
+      fill: $white;
+      transition: $easein all 0.7s;
+      transform: translate(0 , 135px);
+    }
+  }
+}
+
+#headerText{
+
+}

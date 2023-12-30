@@ -1,0 +1,156 @@
+
+/*
+-------------------------INTRO------------------------------- */
+
+
+.main-intro {
+  font-family: "Ogg";
+  font-weight: 100;
+  font-size: 40pt;
+  line-height: 125%;
+  position: relative;
+  height: 373px;
+  margin-top: 20vh;
+  margin-bottom: 30vh;
+  @include respond-width($w-l){
+    font-size: 35pt;
+  }
+  @include respond-width($w-m-s){
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+  }
+  @include respond-width($w-s){
+    margin-top: 0px;
+    height: 300px;
+  }
+  @include respond-width($w-xs){
+    height: 200px;
+  }
+  .intro {
+    z-index: 100;
+    position: relative;
+    top: 50%;
+    transform: translate(0 , -50%);
+    @include respond-width($w-l){
+      font-size: 28pt;
+      line-height: 135%;
+    }
+    @include respond-width($w-m-s){
+      font-size: 27pt;
+    }
+    @include respond-width($w-s){
+      top: -30%;
+      transform: none;
+      font-size: 30px;
+    }
+    @include respond-width($w-xs){
+      top: -50%;
+      font-size: 23px;
+    }
+    br{
+      @include respond-width($w-xs){
+        display: none;
+      }
+    }
+  }
+
+  .me-photo {
+    width: 630px;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $blue;
+    @include respond-width($w-s){
+      position: relative;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    img {
+      width: 100%;
+      top: -120%;
+      left: 0%;
+      position: relative;
+      mix-blend-mode: soft-light;
+    }
+  }
+}
+
+
+
+
+/*
+-------------------------OPIS-HISTORIA------------------------------- */
+
+
+
+
+.opis-ogolny {
+  display: flex;
+  margin-bottom: 25vh;
+  // @include respond-width($w-l){
+  //   margin-bottom: 300px;
+  // }
+  // @include respond-width($w-m-s){
+  //   margin-bottom: 250px;
+  // }
+  @include respond-width($w-s){
+    display: block;
+    // margin-bottom: 150px;
+  }
+
+  .kariera {
+    flex: 0 0 68%;
+    @include respond-width($w-m-s){
+      flex: 0 0 80%;
+    }
+  }
+
+  .opis {
+    padding-right: 20%;
+    font-family: "Ogg";
+    font-size: 25px;
+    line-height: 200%;
+    @include respond-width($w-l){
+      line-height: 180%;
+    }
+    @include respond-width($w-m-s){
+      font-size: 20px;
+    }
+    @include respond-width($w-s){
+      padding-right: 10%;
+      font-size: 18px;
+    }
+  }
+
+  .lata {
+    font-family: "Monument";
+    font-size: 50px;
+    flex: 0 0 32%;
+    padding-right: 150px;
+    text-align: left;
+    margin-top: 25px;
+    // transition: linear 0.1s
+    position: relative;
+    top: 20px;
+    height: 150px;
+    @include respond-width($w-l){
+      font-size: 35px;
+      padding-right: 100px;
+    }
+    @include respond-width($w-m-s){
+      flex: 0 0 20%;
+      padding-right: 75px;
+    }
+    @include respond-width($w-s){
+      padding-right: 25px;
+      margin-bottom: 0px;
+      height: 100px;
+    }
+    @include respond-width($w-xs){
+      font-size: 30px;
+    }
+  }
+}
