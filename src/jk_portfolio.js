@@ -17,6 +17,7 @@ const init = function () {
   setTimeout(()=>{
     pageEnterAnimation();
     updateSectionPositions();
+    setYear();
   }, 500);
   cursorInit();
   projectsHoverInstance.init();
@@ -26,11 +27,25 @@ const init = function () {
 
 
 /*************************** */
+// Copyright Date Set
+/*************************** */
+
+const setYear = () => {
+  const date =  new Date();
+  const $setYear = document.getElementsByClassName('setYear');
+  for (let i = 0; i < $setYear.length; i++) {
+    $setYear[i].innerHTML = date.getFullYear();
+  }
+}
+
+
+/*************************** */
 // Page enter animation
 /*************************** */
 
 const scrollToContact = () => {
   const $contactScrollBtn = document.getElementById('contactScroll');
+  if(!$contactScrollBtn)return
   $contactScrollBtn.addEventListener('click' , (event) => {
     event.preventDefault();
     scrollInstance.scrollToBottomSlow = 1; //slow version

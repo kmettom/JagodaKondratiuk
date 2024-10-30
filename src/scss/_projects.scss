@@ -69,9 +69,9 @@
   .title-agency {
     font-family: "Ogg";
     font-size: 25px;
-    line-height: 200%;
+    line-height: 120%;
     display: inline-block;
-    width: 135px;
+    width: 230px;
     @include respond-width($w-m){
       font-size: 20px;
     }
@@ -91,7 +91,7 @@
 
 .project-title .title,
 .project-one .project-name {
-  width: calc(78% - 135px);
+  width: calc(78% - 230px);
   position: relative;
   display: inline-block;
   vertical-align: bottom;

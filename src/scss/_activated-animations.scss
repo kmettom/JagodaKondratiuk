@@ -68,9 +68,12 @@
     transition: $easein opacity 0.4s;
     // will-change: opacity;
     &.second{
-      transition-delay: 0.3s;
+      transition-delay: 0.2s;
     }
     &.third{
+      transition-delay: 0.4s;
+    }
+    &.four{
       transition-delay: 0.6s;
     }
   }
@@ -88,9 +91,12 @@
       // will-change: transform;
     }
     &.second .text{
-      transition-delay: 0.3s;
+      transition-delay: 0.2s;
     }
     &.third .text{
+      transition-delay: 0.4s;
+    }
+    &.four .text{
       transition-delay: 0.6s;
     }
   }
