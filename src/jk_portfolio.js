@@ -25,6 +25,9 @@ const init = function () {
   scrollToContact();
 };
 
+const darkColor = '#333232';
+const lightColor = '#E9E9DF';
+
 
 /*************************** */
 // Copyright Date Set
@@ -286,27 +289,27 @@ class Cursor {
       scale: 1.6,
     });
     this.cursor.over(".vi-link", {
-      borderColor: "#282f40",
+      borderColor: darkColor,
       background: "#e2e2e2",
       mixBlendMode:  getUserAgent.isFirefox ? "difference" : "screen",
       scale: 1.6,
     });
     this.cursor.over(".howerki", {
-      borderColor: getUserAgent.isFirefox ? '#e2e2e2' : '#282f40',
+      borderColor: getUserAgent.isFirefox ? '#e2e2e2' : darkColor,
       mixBlendMode: getUserAgent.isFirefox ? "difference" : "screen",
-      background: getUserAgent.isFirefox ? '#e2e2e2' : '#282f40',
+      background: getUserAgent.isFirefox ? lightColor : darkColor,
       scale: 1.6,
     });
     this.cursor.over(".tomas-link", {
-      borderColor: getUserAgent.isFirefox ? '#e2e2e2' : '#282f40',
+      borderColor: getUserAgent.isFirefox ? lightColor : darkColor,
       mixBlendMode: getUserAgent.isFirefox ? "difference" : "screen",
-      background: getUserAgent.isFirefox ? '#e2e2e2' : '#282f40' ,
+      background: getUserAgent.isFirefox ? lightColor : darkColor ,
     });
 
     // this.cursor.over(".awwards-ribbon", {
-    //   borderColor: getUserAgent.isFirefox ? '#282f40' : '#282f40',
+    //   borderColor: getUserAgent.isFirefox ? darkColor : darkColor,
     //   mixBlendMode: getUserAgent.isFirefox ? "initial" : "initial",
-    //   background: getUserAgent.isFirefox ? '#282f40' : '#282f40' ,
+    //   background: getUserAgent.isFirefox ? darkColor : darkColor ,
     //   scale: 1.2,
     //
     // });
@@ -314,12 +317,12 @@ class Cursor {
     this.setBGColor('white');
 
   }
-  setBGColor(_color){ // options -> blue #282f40, white #e2e2e2
-    let newBgColor = _color == 'white' ? '#e2e2e2' : '#282f40';
+  setBGColor(_color){ // options -> blue darkColor, white #e2e2e2
+    let newBgColor = _color == 'white' ? lightColor : darkColor;
     this.cursor.updateBgColor(newBgColor);
     this.cursor.over(".vi-link", {
       borderColor: newBgColor,
-      background: _color != 'white' ? '#282f40' : '#e2e2e2',
+      background: _color != 'white' ? darkColor : lightColor,
       mixBlendMode:  _color == 'white' ? "difference" : getUserAgent.isFirefox ? "difference" : "screen",
       scale: 1.6,
     });
