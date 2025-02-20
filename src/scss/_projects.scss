@@ -30,7 +30,7 @@
     }
   }
   .title {
-    font-family: "Ogg";
+    font-family: "PPNeueMontreal";
     font-size: 25px;
     line-height: 200%;
     @include respond-width($w-m){
@@ -68,7 +68,7 @@
   }
   .title-agency {
     float: right;
-    font-family: "Ogg";
+    font-family: "PPNeueMontreal";
     font-size: 25px;
     line-height: 120%;
     display: inline-block;
@@ -103,7 +103,7 @@
 }
 
 .title-year {
-  font-family: "Ogg";
+  font-family: "PPNeueMontreal";
   font-size: 25px;
   line-height: 200%;
   //width: 20%;
