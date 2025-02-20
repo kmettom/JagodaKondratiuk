@@ -69,19 +69,15 @@
   .title-agency {
     float: right;
     font-family: "PPNeueMontreal";
-    font-size: 25px;
+    font-size: 18px;
     line-height: 120%;
     display: inline-block;
-    padding-top: 33px;
-    @include respond-width($w-m){
-      font-size: 20px;
-    }
+    padding-top: 38px;
     @include respond-width($w-s){
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 }
-
 
 .project-title .title,
 .project-one .project-name {
