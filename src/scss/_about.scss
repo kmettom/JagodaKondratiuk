@@ -2,23 +2,29 @@
 /*
 -------------------------INTRO------------------------------- */
 
+.photo-wrapper{
+  display: flex;
+  position: relative;
+  margin-top: 10vh;
+  margin-bottom: 7vh;
+}
+.photo-left{
+  flex: 0 0 40%;
+  @include respond-width($w-m-s){
+    flex: 0 0 30%;
+  }
+}
+.photo-right{
+  position: relative;
+  flex: 0 0 60%;
+  @include respond-width($w-m-s){
+    flex: 0 0 70%;
+  }
+}
 
 .main-intro {
-  font-family: "PPNeueMontreal";
-  font-weight: 100;
-  font-size: 40pt;
-  line-height: 125%;
   position: relative;
   height: 373px;
-  margin-top: 20vh;
-  margin-bottom: 7vh;
-  @include respond-width($w-l){
-    font-size: 35pt;
-  }
-  @include respond-width($w-m-s){
-    margin-top: 10vh;
-    margin-bottom: 20vh;
-  }
   @include respond-width($w-s){
     margin-top: 0px;
     height: 300px;
@@ -54,16 +60,15 @@
     }
   }
 
+
   .me-photo {
-    //width: 55%;
-    //width: 100%;
     width: 620px;
     height: 100%;
     overflow: hidden;
-    position: absolute;
+    position: relative;
+    //position: absolute;
     top: 0;
-    right: 0;
-    //padding-left: 9%;
+    left: 0;
     background-color: $blue;
     @include respond-width($w-s){
       position: relative;
@@ -94,14 +99,13 @@
   }
 
   .kariera {
-    flex: 0 0 68%;
+    flex: 0 0 60%;
     @include respond-width($w-m-s){
-      flex: 0 0 80%;
+      flex: 0 0 70%;
     }
   }
 
   .opis {
-    //padding-right: 15%;
     font-family: "PPNeueMontreal";
     font-size: 18px;
     line-height: 200%;
@@ -117,24 +121,19 @@
   .lata {
     font-family: "Monument";
     font-size: 50px;
-    flex: 0 0 32%;
-    padding-right: 150px;
+    flex: 0 0 40%;
     text-align: left;
     margin-top: 25px;
-    // transition: linear 0.1s
     position: relative;
     top: 20px;
     height: 150px;
     @include respond-width($w-l){
       font-size: 35px;
-      padding-right: 100px;
     }
     @include respond-width($w-m-s){
-      flex: 0 0 20%;
-      padding-right: 75px;
+      flex: 0 0 40%;
     }
     @include respond-width($w-s){
-      padding-right: 25px;
       margin-bottom: 0px;
       height: 100px;
     }
