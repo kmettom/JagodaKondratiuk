@@ -81,27 +81,35 @@ let aboutInfoSection;
 let meFotoSection;
 let footerSection;
 const updateSectionPositions = () => {
-    const headerSectionElRect = headerSectionEl.getBoundingClientRect()
-    headerSection = {
-        top: headerSectionElRect.top,
-        height: headerSectionElRect.height
-    };
-    const aboutInfoSectionElRect = aboutInfoSectionEl.getBoundingClientRect()
-    aboutInfoSection = {
-        top: aboutInfoSectionElRect.top,
-        height: aboutInfoSectionElRect.height,
-        changePosition: aboutInfoSectionElRect.top + aboutInfoSectionElRect.height / 4
-    };
-    const meFotoSectiolElRect = meFotoSectiolEl.getBoundingClientRect()
-    meFotoSection = {
-        top: meFotoSectiolElRect.top,
-        height: meFotoSectiolElRect.height,
-        changePosition: meFotoSectiolElRect.top + meFotoSectiolElRect.height / 2
-    };
-    const footerSectionElRect = footerSectionEl.getBoundingClientRect()
-    footerSection = {
-        top: footerSectionElRect.top,
-        height: footerSectionElRect.height,
+    if (headerSectionEl) {
+        const headerSectionElRect = headerSectionEl.getBoundingClientRect()
+        headerSection = {
+            top: headerSectionElRect.top,
+            height: headerSectionElRect.height
+        };
+    }
+    if (aboutInfoSectionEl) {
+        const aboutInfoSectionElRect = aboutInfoSectionEl.getBoundingClientRect()
+        aboutInfoSection = {
+            top: aboutInfoSectionElRect.top,
+            height: aboutInfoSectionElRect.height,
+            changePosition: aboutInfoSectionElRect.top + aboutInfoSectionElRect.height / 4
+        };
+    }
+    if (meFotoSectiolEl) {
+        const meFotoSectiolElRect = meFotoSectiolEl.getBoundingClientRect()
+        meFotoSection = {
+            top: meFotoSectiolElRect.top,
+            height: meFotoSectiolElRect.height,
+            changePosition: meFotoSectiolElRect.top + meFotoSectiolElRect.height / 2
+        };
+    }
+    if (footerSectionEl) {
+        const footerSectionElRect = footerSectionEl.getBoundingClientRect()
+        footerSection = {
+            top: footerSectionElRect.top,
+            height: footerSectionElRect.height,
+        }
     }
 };
 
@@ -130,19 +138,26 @@ const sectionsAnimateOnScroll = () => {
     if (!sectionsToActivate[sectionsToActivate.length - 1].classList.contains('activaded')) {
         activateNextSection(scrollPos); // activate sections with class, to animate in elements
     }
-    if (scrollPos + window.innerHeight > headerSection.top && scrollPos < headerSection.top + headerSection.height) {
-        headerTextMove(scrollPos); // header move lines in opposite way, different speeds
+    if (headerSection) {
+        if (scrollPos + window.innerHeight > headerSection.top && scrollPos < headerSection.top + headerSection.height) {
+            headerTextMove(scrollPos); // header move lines in opposite way, different speeds
+        }
     }
-    if (scrollPos + window.innerHeight > meFotoSection.top && scrollPos < meFotoSection.top + meFotoSection.height) {
-        meFotoParallax(scrollPos); // me-photo section foto parallax
+    if (meFotoSection) {
+        if (scrollPos + window.innerHeight > meFotoSection.top && scrollPos < meFotoSection.top + meFotoSection.height) {
+            meFotoParallax(scrollPos); // me-photo section foto parallax
+        }
     }
-    if (scrollPos + window.innerHeight > aboutInfoSection.top && scrollPos < aboutInfoSection.top + aboutInfoSection.height) {
-        aboutInfoAni(scrollPos); // about me section - animate color change and sticky year headline
+    if (aboutInfoSection) {
+        if (scrollPos + window.innerHeight > aboutInfoSection.top && scrollPos < aboutInfoSection.top + aboutInfoSection.height) {
+            aboutInfoAni(scrollPos); // about me section - animate color change and sticky year headline
+        }
     }
-    if (scrollPos + window.innerHeight > footerSection.top) {
-        footerAnimateIn(scrollPos); // animate in the footer on scroll
+    if (footerSection) {
+        if (scrollPos + window.innerHeight > footerSection.top) {
+            footerAnimateIn(scrollPos); // animate in the footer on scroll
+        }
     }
-
 }
 
 // let sectionsToActivate;
