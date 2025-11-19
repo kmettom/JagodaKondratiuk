@@ -77,11 +77,6 @@ module.exports = {
             filename: "projects/moiizo.html",
             title: 'Caching',
         }),
-        new HtmlWebpackPlugin({
-            template: './src/projects/moiizo2.html',
-            filename: "projects/moiizo2.html",
-            title: 'Caching',
-        }),
 
     ]
 
