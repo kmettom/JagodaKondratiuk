@@ -1,6 +1,7 @@
-.project-page{
+.project-page {
   font-family: "PPNeueMontreal";
-  .header-h1{
+
+  .header-h1 {
     font-family: "Monument";
     font-size: 50px;
     font-weight: 700;
@@ -8,13 +9,45 @@
     padding: 0;
   }
 
-  .padding-top-m{
+  .header-h2 {
+    font-family: "Monument";
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .padding-right-m {
+    padding-right: 40px;
+  }
+
+  .padding-top-s {
+    padding-top: 30px;
+  }
+  .padding-top-m {
     padding-top: 40px;
   }
-  .padding-top-l{
+
+  .padding-top-xl {
+    padding-top: 80px;
+  }
+
+  .padding-top-l {
     padding-top: 50px;
   }
-  .padding-bottom-l{
+
+  .padding-bottom-l {
     padding-bottom: 50px;
+  }
+
+  .project-block {
+    display: flex;
+  }
+
+  .opis-ogolny .lata {
+    font-size: 16px;
+    font-family: "PPNeueMontreal";
+    font-weight: 400;
   }
 }
