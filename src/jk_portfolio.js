@@ -362,3 +362,20 @@ var cursorInit = function () {
 document.addEventListener("DOMContentLoaded", function (event) {
     init();
 });
+
+//TODO PROJECT PAGE - MOIIZO
+// - Moiizo layout style finish
+// - Moiizo RWD
+// - Side menu active tabs - add anchors to sections
+// - Side menu - on Click scroll to functionality
+// - Header navigation layout and functions
+
+//TODO PROJECT PAGE - OTHER (2 projects)
+// - COPY Moiizo file and adjust the project content
+
+//TODO MAIN PAGE
+// - Project thumbs refactor style and layout
+// - Header navigation layout and functionality
+
+
+
