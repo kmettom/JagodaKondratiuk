@@ -16,12 +16,31 @@
     margin: 0;
     padding: 0;
   }
-
+  .text-base{
+    font-family: "PPNeueMontreal";
+font-size: 16px;
+  }
+  .text-sm{
+    font-family: "PPNeueMontreal";
+    font-size: 12px;
+  }
+.menu-text{
+  a{
+    text-decoration: none;
+  }
+}
+  .header-stats{
+    display: flex;
+    justify-content: space-between;
+  }
 
   .padding-right-m {
     padding-right: 40px;
   }
 
+  .padding-top-xs {
+    padding-top: 20px;
+  }
   .padding-top-s {
     padding-top: 30px;
   }
@@ -29,6 +48,9 @@
     padding-top: 40px;
   }
 
+  .margin-top-xl {
+    margin-top: 80px;
+  }
   .padding-top-xl {
     padding-top: 80px;
   }
@@ -49,5 +71,10 @@
     font-size: 16px;
     font-family: "PPNeueMontreal";
     font-weight: 400;
+    flex: 0 0 35%;
+    margin-top: 0;
+  }
+  .opis-ogolny .kariera{
+    flex: 0 0 65%;
   }
 }
