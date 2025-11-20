@@ -363,19 +363,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
     init();
 });
 
-//TODO PROJECT PAGE - MOIIZO
-// - Moiizo layout style finish
-// - Moiizo RWD
-// - Side menu active tabs - add anchors to sections
-// - Side menu - on Click scroll to functionality
-// - Header navigation layout and functions
-
-//TODO PROJECT PAGE - OTHER (2 projects)
-// - COPY Moiizo file and adjust the project content
 
 //TODO MAIN PAGE
-// - Project thumbs refactor style and layout
-// - Header navigation layout and functionality
+// - Project thumbs refactor style and layout - 8
+// - Header navigation layout and functionality - anchor to contact - 4
+
+//TODO PROJECT PAGE - MOIIZO
+// - Moiizo layout style finish - 4
+// - Moiizo RWD - 4
+// - Moiizo animations adjust with conditions - 4
+// - Side menu active tabs - add anchors to sections - 2
+// - Side menu - on Click scroll to functionality - 4
+// - Header navigation layout and functions - MVP - no About and Projects - 2
+// TODO - Password for case study - 8
+
+
+//TODO PROJECT PAGE - OTHER (2 projects)
+// - COPY Moiizo file and adjust the project content - 4
+
+
+//TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors
 
 
 
