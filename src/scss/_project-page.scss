@@ -77,4 +77,11 @@ font-size: 16px;
   .opis-ogolny .kariera{
     flex: 0 0 65%;
   }
+  .jk-nav-track{
+    &.active{
+      .text{
+        text-decoration: underline;
+      }
+    }
+  }
 }

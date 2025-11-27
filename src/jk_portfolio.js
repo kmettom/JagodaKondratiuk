@@ -23,6 +23,7 @@ const init = function () {
     projectsHoverInstance.init();
     footerGoToTopBtnListen();
     scrollToContact();
+    projectPageNavItemsListen();
 };
 
 const darkColor = '#333232';
@@ -151,6 +152,9 @@ const sectionsAnimateOnScroll = () => {
     if (aboutInfoSection) {
         if (scrollPos + window.innerHeight > aboutInfoSection.top && scrollPos < aboutInfoSection.top + aboutInfoSection.height) {
             aboutInfoAni(scrollPos); // about me section - animate color change and sticky year headline
+            if (projectPageNavItems && projectPageNavItems.length > 0) {
+                projectPageNavigationTrack(scrollPos);
+            }
         }
     }
     if (footerSection) {
@@ -210,6 +214,38 @@ const headerTextMove = (_scrollPos) => {
     }
 }
 
+
+/*************************** */
+// Portfolio menu tracking and scroll
+/*************************** */
+
+const projectPageNavItems = document.querySelectorAll(".jk-nav-track");
+const projectPageNavSections = document.querySelectorAll(".jk-section-track");
+let currentActiveIndex = null;
+const projectPageNavigationTrack = (_scrollPos) => {
+    for (let i = 0; i < projectPageNavSections.length; i++) {
+        if (projectPageNavSections[i].getBoundingClientRect().top < 0 && projectPageNavSections[i].getBoundingClientRect().bottom > 0) {
+            if (currentActiveIndex !== i) {
+                currentActiveIndex = i;
+                projectPageNavItems[i].classList.add('active')
+            }
+        } else {
+            projectPageNavItems[i].classList.remove('active')
+        }
+    }
+}
+
+const projectPageNavItemsListen = () => {
+    if (projectPageNavItems && projectPageNavItems.length > 0) {
+        for (let i = 0; i < projectPageNavItems.length; i++) {
+            projectPageNavItems[i].addEventListener('click', (event) => {
+                const destination = projectPageNavSections[i].offsetTop;
+                scrollInstance.Y_dest_update = destination;
+            })
+        }
+    }
+}
+
 /*************************** */
 // Zmiana koloru portfolio
 /*************************** */
@@ -238,6 +274,7 @@ const updateStickyHeaderPosition = () => {
 
 let scrollPosBackup;
 const aboutInfoAni = function (_scrollPos) {
+
     if (_scrollPos > aboutInfoSection.top && window.innerWidth > 768) {
         let scrollSize = _scrollPos - scrollPosBackup;
 
@@ -369,18 +406,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // - Header navigation layout and functionality - anchor to contact - 4
 
 //TODO PROJECT PAGE - MOIIZO
+// - Password for case study - 8
 // - Moiizo layout style finish - 4
 // - Moiizo RWD - 4
 // - Moiizo animations adjust with conditions - 4
-// - Side menu active tabs - add anchors to sections - 2
-// - Side menu - on Click scroll to functionality - 4
 // - Header navigation layout and functions - MVP - no About and Projects - 2
-// TODO - Password for case study - 8
 
+// - Side menu active tabs - add anchors to sections - 2 - DONE
+// - Side menu - on Click scroll to functionality - 4 - DONE
 
 //TODO PROJECT PAGE - OTHER (2 projects)
 // - COPY Moiizo file and adjust the project content - 4
-
 
 //TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors
 
