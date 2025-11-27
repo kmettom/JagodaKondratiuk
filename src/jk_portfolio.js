@@ -24,6 +24,7 @@ const init = function () {
     footerGoToTopBtnListen();
     scrollToContact();
     projectPageNavItemsListen();
+    projectPageScreenLock();
 };
 
 const darkColor = '#333232';
@@ -244,6 +245,13 @@ const projectPageNavItemsListen = () => {
             })
         }
     }
+}
+
+const projectPageScreenLock = () => {
+    const screenLockPassSubmit = document.querySelector('#screenLockPassSubmit');
+    screenLockPassSubmit.addEventListener('click', (event) => {
+        console.log(event)
+    })
 }
 
 /*************************** */

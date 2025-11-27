@@ -16,20 +16,24 @@
     margin: 0;
     padding: 0;
   }
-  .text-base{
+
+  .text-base {
     font-family: "PPNeueMontreal";
-font-size: 16px;
+    font-size: 16px;
   }
-  .text-sm{
+
+  .text-sm {
     font-family: "PPNeueMontreal";
     font-size: 12px;
   }
-.menu-text{
-  a{
-    text-decoration: none;
+
+  .menu-text {
+    a {
+      text-decoration: none;
+    }
   }
-}
-  .header-stats{
+
+  .header-stats {
     display: flex;
     justify-content: space-between;
   }
@@ -41,9 +45,11 @@ font-size: 16px;
   .padding-top-xs {
     padding-top: 20px;
   }
+
   .padding-top-s {
     padding-top: 30px;
   }
+
   .padding-top-m {
     padding-top: 40px;
   }
@@ -51,6 +57,7 @@ font-size: 16px;
   .margin-top-xl {
     margin-top: 80px;
   }
+
   .padding-top-xl {
     padding-top: 80px;
   }
@@ -74,14 +81,27 @@ font-size: 16px;
     flex: 0 0 35%;
     margin-top: 0;
   }
-  .opis-ogolny .kariera{
+
+  .opis-ogolny .kariera {
     flex: 0 0 65%;
   }
-  .jk-nav-track{
-    &.active{
-      .text{
+
+  .jk-nav-track {
+    &.active {
+      .text {
         text-decoration: underline;
       }
     }
+  }
+
+  #screenLock {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #0e0e0e;
   }
 }
