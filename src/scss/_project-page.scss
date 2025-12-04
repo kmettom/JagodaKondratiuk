@@ -87,9 +87,30 @@
   }
 
   .jk-nav-track {
+    .text {
+      &:before {
+        content: "•";
+        font-size: 25px;
+        font-weight: bold;
+        bottom: 2px;
+        position: relative;
+        display: inline-block;
+        width: 0px;
+        overflow: hidden;
+        vertical-align: middle;
+        transition: ease all 0.3s;
+        font-family: "sans-serif";
+        padding-right: 0px;
+      }
+    }
+
     &.active {
       .text {
-        text-decoration: underline;
+        &:before {
+          padding-right: 5px;
+          width: 15px;
+          text-align: center;
+        }
       }
     }
   }
