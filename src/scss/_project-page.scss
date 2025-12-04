@@ -17,7 +17,7 @@
     padding: 0;
   }
 
-  .header-project-description{
+  .header-project-description {
     max-width: 748px;
     line-height: 190%;
     letter-spacing: 0.02em;
@@ -28,6 +28,15 @@
     font-size: 16px;
     letter-spacing: 0.02em;
     line-height: 160%;
+  }
+
+  ul {
+    padding-left: 16px;
+  }
+
+  strong {
+    font-family: "PPNeueMontrealMedium";
+    font-weight: bold;
   }
 
   .text-sm {
@@ -80,6 +89,11 @@
 
   .project-block {
     display: flex;
+    align-items: center;
+
+    &.align-top {
+      align-items: baseline;
+    }
   }
 
   .opis-ogolny .lata {
