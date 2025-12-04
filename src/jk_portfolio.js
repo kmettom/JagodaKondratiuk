@@ -258,8 +258,8 @@ const projectUnlock = (content) => {
     // lockContentWrapperEl.appendChild(content);
     const lockContentEl = document.querySelector('#lockContent');
 
-    lockContentEl.style.display = 'block';
-    lockContentEl.style.visibility = 'initial';
+    // lockContentEl.style.display = 'block';
+    // lockContentEl.style.visibility = 'initial';
     // init();
 
 }
@@ -270,8 +270,8 @@ const projectPageScreenLockInit = () => {
     const lockContentEl = document.querySelector('#lockContent');
 
     if (screenLockPassSubmit && lockContentEl) {
-        lockContentEl.style.display = 'none';
-        lockContentEl.style.visibility = 'none';
+        // lockContentEl.style.display = 'none';
+        // lockContentEl.style.visibility = 'none';
 
         screenLockPassSubmit.addEventListener('click', (event) => {
             // if (screenLockInput.value === 'x') {
