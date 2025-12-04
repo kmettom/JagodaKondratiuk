@@ -247,10 +247,19 @@ const projectPageNavItemsListen = () => {
     }
 }
 
+const projectUnlock = () => {
+    console.log("projectUnlock")
+    const screenLock = document.querySelector('#screenLock');
+    screenLock.style.display = 'none';
+}
+
 const projectPageScreenLock = () => {
     const screenLockPassSubmit = document.querySelector('#screenLockPassSubmit');
+    const screenLockInput = document.querySelector('#screenLockInput');
     screenLockPassSubmit.addEventListener('click', (event) => {
-        console.log(event)
+        if (screenLockInput.value === 'x') {
+            projectUnlock();
+        }
     })
 }
 
