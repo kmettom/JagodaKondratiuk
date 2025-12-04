@@ -24,7 +24,7 @@ const init = function () {
     footerGoToTopBtnListen();
     scrollToContact();
     projectPageNavItemsListen();
-    projectPageScreenLock();
+    projectPageScreenLockInit();
 };
 
 const darkColor = '#333232';
@@ -250,21 +250,36 @@ const projectPageNavItemsListen = () => {
     }
 }
 
-const projectUnlock = () => {
+const projectUnlock = (content) => {
     console.log("projectUnlock")
     const screenLock = document.querySelector('#screenLock');
     screenLock.style.display = 'none';
+    // const lockContentWrapperEl = document.querySelector('#lockContentWrapper');
+    // lockContentWrapperEl.appendChild(content);
+    const lockContentEl = document.querySelector('#lockContent');
+
+    lockContentEl.style.display = 'block';
+    lockContentEl.style.visibility = 'initial';
+    // init();
+
 }
 
-const projectPageScreenLock = () => {
+const projectPageScreenLockInit = () => {
     const screenLockPassSubmit = document.querySelector('#screenLockPassSubmit');
     const screenLockInput = document.querySelector('#screenLockInput');
-    screenLockPassSubmit.addEventListener('click', (event) => {
-        if (screenLockInput.value === 'x') {
-            projectUnlock();
-        }
-        projectUnlock();
-    })
+    const lockContentEl = document.querySelector('#lockContent');
+
+    if (screenLockPassSubmit && lockContentEl) {
+        lockContentEl.style.display = 'none';
+        lockContentEl.style.visibility = 'none';
+
+        screenLockPassSubmit.addEventListener('click', (event) => {
+            // if (screenLockInput.value === 'x') {
+            //     projectUnlock(lockContentEl);
+            // }
+            projectUnlock(lockContentEl);
+        })
+    }
 }
 
 /*************************** */
@@ -417,23 +432,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 //TODO MAIN PAGE
-// - Project thumbs refactor style and layout - 8
-// - Header navigation layout and functionality - anchor to contact - 4
+// 1- Project thumbs refactor style and layout - 8
+// 1- Header navigation layout and functionality - anchor to contact - 4
 
 //TODO PROJECT PAGE - MOIIZO
-// - Password for case study - 8
-// - Moiizo layout style finish - 4
+// 1- Password for case study - 8
+
+
 // - Moiizo RWD - 4
 // - Moiizo animations adjust with conditions - 4
-// - Header navigation layout and functions - MVP - no About and Projects - 2
+
 
 // - Side menu active tabs - add anchors to sections - 2 - DONE
 // - Side menu - on Click scroll to functionality - 4 - DONE
+// - Moiizo layout style finish - 4 - DONE
+
 
 //TODO PROJECT PAGE - OTHER (2 projects)
 // - COPY Moiizo file and adjust the project content - 4
 
 //TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors
+// - Header navigation layout and functions - MVP - no About and Projects - 2
 
 
 
