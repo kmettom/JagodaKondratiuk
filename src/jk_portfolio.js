@@ -92,10 +92,12 @@ const updateSectionPositions = () => {
     }
     if (aboutInfoSectionEl) {
         const aboutInfoSectionElRect = aboutInfoSectionEl.getBoundingClientRect()
+        const isProjectPage = aboutInfoSectionEl.classList.contains('project-content-wrapper');
         aboutInfoSection = {
             top: aboutInfoSectionElRect.top,
             height: aboutInfoSectionElRect.height,
-            changePosition: aboutInfoSectionElRect.top + aboutInfoSectionElRect.height / 4
+            isProjectPage: isProjectPage,
+            changePosition: isProjectPage ? aboutInfoSectionElRect.top : aboutInfoSectionElRect.top + aboutInfoSectionElRect.height / 4
         };
     }
     if (meFotoSectiolEl) {
@@ -260,6 +262,7 @@ const projectPageScreenLock = () => {
         if (screenLockInput.value === 'x') {
             projectUnlock();
         }
+        projectUnlock();
     })
 }
 
@@ -310,15 +313,9 @@ const aboutInfoAni = function (_scrollPos) {
 
     if (aboutInfoSection.changePosition < _scrollPos && currentColorTheme == 'dark') {
         requestAnimationFrame(changeToLigth);
-        // document.querySelector("body").classList.add("ligth");
-        // cursorInstance.setBGColor('blue');
-        // currentColorTheme = 'ligth';
 
     } else if (aboutInfoSection.changePosition > _scrollPos && currentColorTheme == 'ligth') {
         requestAnimationFrame(changeToDark);
-        // document.querySelector("body").classList.remove("ligth");
-        // cursorInstance.setBGColor('white');
-        // currentColorTheme = 'dark';
     }
 
 };
