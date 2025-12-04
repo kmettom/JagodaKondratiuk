@@ -17,9 +17,17 @@
     padding: 0;
   }
 
+  .header-project-description{
+    max-width: 748px;
+    line-height: 190%;
+    letter-spacing: 0.02em;
+  }
+
   .text-base {
     font-family: "PPNeueMontreal";
     font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 160%;
   }
 
   .text-sm {
