@@ -225,9 +225,10 @@ const headerTextMove = (_scrollPos) => {
 const projectPageNavItems = document.querySelectorAll(".jk-nav-track");
 const projectPageNavSections = document.querySelectorAll(".jk-section-track");
 let currentActiveIndex = null;
+const activeMarginTop = 50
 const projectPageNavigationTrack = (_scrollPos) => {
     for (let i = 0; i < projectPageNavSections.length; i++) {
-        if (projectPageNavSections[i].getBoundingClientRect().top < 0 && projectPageNavSections[i].getBoundingClientRect().bottom > 0) {
+        if (projectPageNavSections[i].getBoundingClientRect().top < activeMarginTop && projectPageNavSections[i].getBoundingClientRect().bottom > activeMarginTop) {
             if (currentActiveIndex !== i) {
                 currentActiveIndex = i;
                 projectPageNavItems[i].classList.add('active')
