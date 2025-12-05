@@ -11,12 +11,18 @@
                   minmax(360px, 1fr)
   );
 
-  a,
+  a.project-one{
+    color: $white;
+  }
   .project-one {
     color: $white;
     position: relative;
     grid-row: span 2;
     overflow: hidden;
+  }
+
+  .project-push-down{
+    top:120px
   }
 
   .project-bg {
@@ -104,16 +110,16 @@
   }
 }
 
-.project-title .title {
-  font-family: "Monument";
-  font-size: 50px;
-  text-transform: uppercase;
-}
-
-.project-title .title {
-  @include respond-width($w-s) {
-    width: auto;
-    padding-right: 20px;
+.project-title{
+  padding-bottom: 50px;
+  .title {
+    font-family: "Monument";
+    font-size: 50px;
+    text-transform: uppercase;
+    @include respond-width($w-s) {
+      width: auto;
+      padding-right: 20px;
+    }
   }
 }
 
