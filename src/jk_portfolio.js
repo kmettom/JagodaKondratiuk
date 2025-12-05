@@ -395,15 +395,7 @@ class Cursor {
             mixBlendMode: getUserAgent.isFirefox ? "difference" : "screen",
             background: getUserAgent.isFirefox ? lightColor : darkColor,
         });
-
-        // this.cursor.over(".awwards-ribbon", {
-        //   borderColor: getUserAgent.isFirefox ? darkColor : darkColor,
-        //   mixBlendMode: getUserAgent.isFirefox ? "initial" : "initial",
-        //   background: getUserAgent.isFirefox ? darkColor : darkColor ,
-        //   scale: 1.2,
-        //
-        // });
-
+        
         this.setBGColor('white');
 
     }
@@ -436,26 +428,30 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 //TODO MAIN PAGE
-// 1 - Project thumbs refactor style and layout - 8
 // 1 - Header navigation layout and functionality - anchor to contact - 4
+// Projects grid RWD
+// Projects grid fill in data
 
 //TODO PROJECT PAGE - MOIIZO
 // - Password for case study STYLE & RWD - 4
 // - Moiizo RWD - 4
-// - Moiizo animations adjust with conditions - 4
-
-
-// 1- Password for case study - 8 - DONE
-// - Side menu active tabs - add anchors to sections - 2 - DONE
-// - Side menu - on Click scroll to functionality - 4 - DONE
-// - Moiizo layout style finish - 4 - DONE
-
 
 //TODO PROJECT PAGE - OTHER (2 projects)
 // - COPY Moiizo file and adjust the project content - 4
 
 //TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors
 // - Header navigation layout and functions - MVP - no About and Projects - 2
+
+
+// DONE DONE DONE
+// - Moiizo animations adjust with conditions - 4 - DONE
+// 1 - Project thumbs refactor style and layout - 8 - DONE
+// 1- Password for case study - 8 - DONE
+// - Side menu active tabs - add anchors to sections - 2 - DONE
+// - Side menu - on Click scroll to functionality - 4 - DONE
+// - Moiizo layout style finish - 4 - DONE
+
+
 
 
 
