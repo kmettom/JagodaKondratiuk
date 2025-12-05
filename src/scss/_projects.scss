@@ -5,13 +5,19 @@
 .projects-wrapper{
   display: flex;
   .project-bg{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    object-fit: cover;
     opacity: 1;
+  }
+  .project-content-wrapper{
+    //padding-right: 20px;
+    text-align: left;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+  .project-content-bottom{
+display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -23,18 +29,12 @@
   @include respond-width($w-m-s){
     margin-bottom: 200px;
   }
-  a {
+  .project-name {
     font-family: "Monument";
     font-size: 50px;
-    color: #e2e2e2;
-    text-decoration: none;
-    text-align: right;
-    padding: 25px 25px 25px 0;
+    padding-bottom: 7px;
     @include respond-width($w-m){
       font-size: 35px;
-    }
-    @include respond-width($w-s){
-      padding: 15px 15px 15px 0px
     }
     @include respond-width($w-xs){
       text-align: left;
@@ -53,10 +53,6 @@
     }
   }
   .project-one {
-    padding: 25px 0px;
-    @include respond-width($w-s){
-      padding: 10px 0px;
-    }
     .title-year{
       padding-bottom: 25px;
       @include respond-width($w-s){
@@ -79,14 +75,10 @@
     //}
   }
   .title-agency {
-    float: right;
     font-family: "PPNeueMontreal";
-    font-size: 18px;
-    line-height: 120%;
-    display: inline-block;
-    padding-top: 38px;
+    font-size: 14px;
     @include respond-width($w-s){
-      font-size: 16px;
+      font-size: 12px;
     }
   }
 }
@@ -95,18 +87,6 @@
   font-family: "Monument";
   font-size: 50px;
   text-transform: uppercase;
-}
-.project-title .title,
-.project-one .project-name {
-  position: relative;
-  display: inline-block;
-
-  @include respond-width($w-s){
-    width: 100%;
-    position: relative;
-    display: inline-block;
-  }
-
 }
 .project-title .title {
   @include respond-width($w-s){

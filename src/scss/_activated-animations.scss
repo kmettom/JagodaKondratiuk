@@ -183,16 +183,6 @@
     }
   }
 
-  &.project-one,
-  &.project-title{ // special :after element line animation in Projects section
-    &:after{
-      transition: $easein width 1.3s;
-      transition-delay: 0s;
-      width: 0%;
-      // will-change: width;
-    }
-  }
-
   //*************************************************************
   // ME-PHOTO SECTION SPECIAL STYLE
   //*************************************************************
