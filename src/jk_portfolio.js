@@ -422,6 +422,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // 1 - Header navigation layout and functionality - anchor to contact - 4
 // Projects grid RWD
 // Projects grid fill in data
+// Project grid animate on scroll
 
 //TODO PROJECT PAGE - MOIIZO
 // - Password for case study STYLE & RWD - 4
@@ -429,6 +430,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 //TODO PROJECT PAGE - OTHER (2 projects)
 // - COPY Moiizo file and adjust the project content - 4
+
 
 //TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors
 // - Header navigation layout and functions - MVP - no About and Projects - 2
