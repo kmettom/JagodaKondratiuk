@@ -2,6 +2,18 @@
 /*
 -------------------------PROJEKTY-TABELA------------------------------- */
 
+.projects-wrapper{
+  display: flex;
+  .project-bg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    opacity: 1;
+  }
+}
 
 .projects-main {
   margin-bottom: 225px;
@@ -57,14 +69,14 @@
   .project-one,
   .project-title {
     position: relative;
-    &:after{
-      content: '';
-      height: 1px;
-      background: $white;
-      bottom: 0px;
-      position: absolute;
-      left: 0px;
-    }
+    //&:after{
+    //  content: '';
+    //  height: 1px;
+    //  background: $white;
+    //  bottom: 0px;
+    //  position: absolute;
+    //  left: 0px;
+    //}
   }
   .title-agency {
     float: right;
@@ -79,6 +91,11 @@
   }
 }
 
+.project-title .title{
+  font-family: "Monument";
+  font-size: 50px;
+  text-transform: uppercase;
+}
 .project-title .title,
 .project-one .project-name {
   position: relative;

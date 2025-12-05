@@ -3,15 +3,15 @@
   &.activaded{
     &.project-one,
     &.project-title{
-      &:after{
-        width: 100%;
-        will-change: unset;
-      }
+      //&:after{
+      //  width: 100%;
+      //  will-change: unset;
+      //}
     }
     .photo-activate{
       &:after{
         transform: translate(100% , 0%);
-        // animation: ani-img-overlay 1s forwards;
+        animation: ani-img-overlay 1s forwards;
         will-change: unset;
       }
       img{

@@ -62,9 +62,9 @@ body {
     }
     .project-one,
     .project-title{
-      &:after{
-        background: $blue;
-      }
+      //&:after{
+      //  background: $blue;
+      //}
     }
   }
 }

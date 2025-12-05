@@ -1,12 +1,10 @@
 import styles from './scss/main.scss';
 import cursorDot from './js/cursor.js';
 import {Scroll} from './js/scroll.js';
-import {ProjectsHover} from './js/projects_hover.js';
 
 import {getUserAgent} from './js/useragent.js';
 
 
-let projectsHoverInstance = new ProjectsHover;
 let scrollInstance = new Scroll;
 
 /*************************** */
@@ -20,7 +18,6 @@ const init = function () {
         setYear();
     }, 500);
     cursorInit();
-    projectsHoverInstance.init();
     footerGoToTopBtnListen();
     scrollToContact();
     projectPageNavItemsListen();
@@ -127,14 +124,14 @@ window.onresize = function (event) {
 /*************************** */
 
 let scrollPos = scrollInstance.Y_pos;
-const minScrollChange = 3;
+// const minScrollChange = 3;
 const sectionsAnimateOnScroll = () => {
 
-    if (projectsHoverInstance.hoverActive) {
-        if (scrollPos - minScrollChange > scrollInstance.Y_pos || scrollPos + minScrollChange < scrollInstance.Y_pos) {
-            projectsHoverInstance.resetOnScroll = true;
-        }
-    }
+    // if (projectsHoverInstance.hoverActive) {
+    //     if (scrollPos - minScrollChange > scrollInstance.Y_pos || scrollPos + minScrollChange < scrollInstance.Y_pos) {
+    //         projectsHoverInstance.resetOnScroll = true;
+    //     }
+    // }
 
     if (scrollPos == scrollInstance.Y_pos) return;
     scrollPos = scrollInstance.Y_pos;
@@ -167,22 +164,14 @@ const sectionsAnimateOnScroll = () => {
     }
 }
 
-// let sectionsToActivate;
 const sectionsToActivate = document.getElementsByClassName('section-activate');
-let activeSectionIndex;
 const activateNextSection = (_scrollPos) => {
     for (var i = 0; i < sectionsToActivate.length; i++) {
         if (_scrollPos + window.innerHeight > sectionsToActivate[i].offsetTop + window.innerHeight / 4) {
             sectionsToActivate[i].classList.add('activaded');
-            // activeSectionIndex = i;
-            // requestAnimationFrame( addClassToSection );
         }
     }
 };
-
-// const addClassToSection = () => {
-//   sectionsToActivate[activeSectionIndex].classList.add('activaded');
-// };
 
 /*************************** */
 // FOOTER animate in
