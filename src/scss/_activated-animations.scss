@@ -1,13 +1,6 @@
 .section-activate{
 
   &.activaded{
-    &.project-one,
-    &.project-title{
-      //&:after{
-      //  width: 100%;
-      //  will-change: unset;
-      //}
-    }
     .photo-activate{
       &:after{
         transform: translate(100% , 0%);
@@ -177,7 +170,6 @@
     }
     .text-activate-move{
       .text{
-        // transition-delay: 1s;
         will-change: transform;
       }
     }
