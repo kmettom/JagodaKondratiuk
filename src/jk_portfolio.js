@@ -83,8 +83,7 @@ const updateSectionPositions = () => {
     if (headerSectionEl) {
         const headerSectionElRect = headerSectionEl.getBoundingClientRect()
         headerSection = {
-            top: headerSectionElRect.top,
-            height: headerSectionElRect.height
+            top: headerSectionElRect.top, height: headerSectionElRect.height
         };
     }
     if (aboutInfoSectionEl) {
@@ -108,8 +107,7 @@ const updateSectionPositions = () => {
     if (footerSectionEl) {
         const footerSectionElRect = footerSectionEl.getBoundingClientRect()
         footerSection = {
-            top: footerSectionElRect.top,
-            height: footerSectionElRect.height,
+            top: footerSectionElRect.top, height: footerSectionElRect.height,
         }
     }
 };
@@ -359,11 +357,7 @@ const meFotoParallax = function (_scrollPos) {
 class Cursor {
     constructor() {
         this.cursor = cursorDot({
-            easing: 4,
-            diameter: 50,
-            borderWidth: 1,
-            borderColor: "#e2e2e2",
-            background: "transparent",
+            easing: 4, diameter: 50, borderWidth: 1, borderColor: "#e2e2e2", background: "transparent",
         });
     }
 
@@ -373,10 +367,7 @@ class Cursor {
             borderColor: "#e2e2e2",
         });
         this.cursor.over("#scrollToTopTrigger", {
-            borderColor: "#e2e2e2",
-            background: "#e2e2e2",
-            mixBlendMode: "difference",
-            scale: 1.6,
+            borderColor: "#e2e2e2", background: "#e2e2e2", mixBlendMode: "difference", scale: 1.6,
         });
         this.cursor.over(".vi-link", {
             borderColor: darkColor,
@@ -395,7 +386,7 @@ class Cursor {
             mixBlendMode: getUserAgent.isFirefox ? "difference" : "screen",
             background: getUserAgent.isFirefox ? lightColor : darkColor,
         });
-        
+
         this.setBGColor('white');
 
     }
