@@ -5,23 +5,48 @@
   display: grid;
   width: 100%;
   max-width: 1200px;
-  gap: 10px;
+  gap: 20px;
   grid-template-columns: repeat(
     auto-fit,
                   minmax(360px, 1fr)
   );
 
+  a,
   .project-one {
+    color: $white;
     position: relative;
     grid-row: span 2;
+    overflow: hidden;
   }
 
   .project-bg {
+    width: 100%;
+    object-fit: cover;
     opacity: 1;
+  }
+  .case-study-label{
+    font-family: "PPNeueMontreal";
+    position: absolute;
+    text-transform: uppercase;
+    top: 20px;
+    font-size: 14px;
+    left: 20px;
+    color: $blue;
+    background: $white;
+    padding: 5px 12px 5px 25px;
+    border-radius: 20px;
+    .case-dot{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 10px;
+      font-family: "sans-serif";
+      font-size: 27px;
+      line-height: 0;
+    }
   }
 
   .project-content-wrapper {
-    //padding-right: 20px;
     text-align: left;
     position: absolute;
     bottom: 20px;
