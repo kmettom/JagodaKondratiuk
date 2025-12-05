@@ -77,6 +77,7 @@ const pageEnterAnimation = () => {
 
 let headerSection;
 let aboutInfoSection;
+let projectsSection;
 let meFotoSection;
 let footerSection;
 const updateSectionPositions = () => {
@@ -102,6 +103,16 @@ const updateSectionPositions = () => {
             top: meFotoSectiolElRect.top,
             height: meFotoSectiolElRect.height,
             changePosition: meFotoSectiolElRect.top + meFotoSectiolElRect.height / 2
+        };
+    }
+    if (projectsSectionEl) {
+        const projectsSectionElRect = projectsSectionEl.getBoundingClientRect()
+        // const isProjectPage = projectsSectionEl.classList.contains('project-content-wrapper');
+        projectsSection = {
+            top: projectsSectionElRect.top,
+            height: projectsSectionElRect.height,
+            // isProjectPage: isProjectPage,
+            // changePosition: isProjectPage ? projectsSectionElRect.top : projectsSectionElRect.top + projectsSectionElRect.height / 4
         };
     }
     if (footerSectionEl) {
@@ -155,6 +166,15 @@ const sectionsAnimateOnScroll = () => {
             }
         }
     }
+    if (projectsSection) {
+        if (scrollPos + window.innerHeight > projectsSection.top && scrollPos < projectsSection.top + projectsSection.height) {
+            projectsMove(scrollPos)
+            // aboutInfoAni(scrollPos); // about me section - animate color change and sticky year headline
+            // if (projectPageNavItems && projectPageNavItems.length > 0) {
+            //     projectPageNavigationTrack(scrollPos);
+            // }
+        }
+    }
     if (footerSection) {
         if (scrollPos + window.innerHeight > footerSection.top) {
             footerAnimateIn(scrollPos); // animate in the footer on scroll
@@ -202,6 +222,16 @@ const headerTextMove = (_scrollPos) => {
         move = move * headerLines[i].getAttribute('data-movecoef');
         headerLines[i].style.transform = 'translate(' + move + 'px , 0px)';
     }
+}
+
+
+/*************************** */
+// PROJECTS move
+/*************************** */
+
+const projectsSectionEl = document.getElementById('projectsSection');
+const projectsMove = (_scrollPos) => {
+    console.log("project move", _scrollPos)
 }
 
 
