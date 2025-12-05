@@ -250,35 +250,50 @@ const projectPageNavItemsListen = () => {
     }
 }
 
-const projectUnlock = (content) => {
-    console.log("projectUnlock")
+const screenUnlock = () => {
     const screenLock = document.querySelector('#screenLock');
     screenLock.style.display = 'none';
-    // const lockContentWrapperEl = document.querySelector('#lockContentWrapper');
-    // lockContentWrapperEl.appendChild(content);
-    const lockContentEl = document.querySelector('#lockContent');
-
-    // lockContentEl.style.display = 'block';
-    // lockContentEl.style.visibility = 'initial';
-    // init();
-
 }
 
+function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    return crypto.subtle.digest('SHA-256', data).then((hashBuffer) => {
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray
+            .map((b) => b.toString(16).padStart(2, '0'))
+            .join('');
+    });
+}
+
+const PASSWORD_HASH = 'f312795e322c87461a6f3c49e09897c59ca0d5a36245d2a00f08cbc66eee976d'; //abcxyz
+
 const projectPageScreenLockInit = () => {
+
+    // hashPassword('').then((pass) => {
+    //     console.log("pass", pass)
+    // })
+
     const screenLockPassSubmit = document.querySelector('#screenLockPassSubmit');
-    const screenLockInput = document.querySelector('#screenLockInput');
-    const lockContentEl = document.querySelector('#lockContent');
 
-    if (screenLockPassSubmit && lockContentEl) {
-        // lockContentEl.style.display = 'none';
-        // lockContentEl.style.visibility = 'none';
-
-        screenLockPassSubmit.addEventListener('click', (event) => {
-            // if (screenLockInput.value === 'x') {
-            //     projectUnlock(lockContentEl);
-            // }
-            projectUnlock(lockContentEl);
-        })
+    if (screenLockPassSubmit) {
+        const locked = window.localStorage.getItem('lockContent');
+        if (locked === 'false') {
+            screenUnlock();
+        } else {
+            window.localStorage.setItem('lockContent', JSON.stringify(true));
+            const lockContentEl = document.querySelector('#lockContent');
+            lockContentEl.remove();
+            screenLockPassSubmit.addEventListener('click', (event) => {
+                const inputValue = screenLockInput.value.trim();
+                hashPassword(inputValue).then((inputHash) => {
+                    if (inputHash === PASSWORD_HASH) {
+                        window.localStorage.setItem('lockContent', JSON.stringify(false));
+                        window.location.reload();
+                    }
+                })
+            })
+        }
     }
 }
 
