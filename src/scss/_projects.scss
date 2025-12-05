@@ -11,9 +11,10 @@
                   minmax(360px, 1fr)
   );
 
-  a.project-one{
+  a.project-one {
     color: $white;
   }
+
   .project-one {
     color: $white;
     position: relative;
@@ -21,8 +22,8 @@
     overflow: hidden;
   }
 
-  .project-push-down{
-    top:120px
+  .project-push-down {
+    top: 120px
   }
 
   .project-bg {
@@ -30,7 +31,8 @@
     object-fit: cover;
     opacity: 1;
   }
-  .case-study-label{
+
+  .case-study-label {
     font-family: "PPNeueMontreal";
     position: absolute;
     text-transform: uppercase;
@@ -41,7 +43,8 @@
     background: $white;
     padding: 5px 12px 5px 25px;
     border-radius: 20px;
-    .case-dot{
+
+    .case-dot {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -110,8 +113,9 @@
   }
 }
 
-.project-title{
+.project-title {
   padding-bottom: 50px;
+
   .title {
     font-family: "Monument";
     font-size: 50px;
