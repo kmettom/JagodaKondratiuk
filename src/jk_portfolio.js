@@ -447,17 +447,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 //TODO MAIN PAGE
-// 1- Project thumbs refactor style and layout - 8
-// 1- Header navigation layout and functionality - anchor to contact - 4
+// 1 - Project thumbs refactor style and layout - 8
+// 1 - Header navigation layout and functionality - anchor to contact - 4
 
 //TODO PROJECT PAGE - MOIIZO
-// 1- Password for case study - 8
-
-
+// - Password for case study STYLE & RWD - 4
 // - Moiizo RWD - 4
 // - Moiizo animations adjust with conditions - 4
 
 
+// 1- Password for case study - 8 - DONE
 // - Side menu active tabs - add anchors to sections - 2 - DONE
 // - Side menu - on Click scroll to functionality - 4 - DONE
 // - Moiizo layout style finish - 4 - DONE
