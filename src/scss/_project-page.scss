@@ -36,6 +36,21 @@
     }
   }
 
+  .show-sm {
+    display: none;
+    @include respond-width($w-s) {
+      display: block;
+    }
+  }
+
+  .hide-sm {
+    display: block;
+    @include respond-width($w-s) {
+      display: none;
+    }
+
+  }
+
   ul {
     padding-left: 16px;
   }
@@ -63,6 +78,17 @@
   .header-stats {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @include respond-width($w-s) {
+      justify-content: flex-start;
+    }
+  }
+
+  .header-stats-block {
+    @include respond-width($w-s) {
+      width: 33%;
+      padding-bottom: 20px;
+    }
   }
 
   .padding-right-m {
@@ -108,10 +134,15 @@
   .project-block {
     display: flex;
     align-items: center;
-
+    @include respond-width($w-s) {
+      display: block;
+    }
     &.align-top {
       align-items: baseline;
     }
+  }
+  img{
+    max-width: 100%;
   }
 
   .opis-ogolny .lata {
@@ -120,6 +151,12 @@
     font-weight: 400;
     flex: 0 0 35%;
     margin-top: 0;
+    @include respond-width($w-s) {
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
   }
 
   .opis-ogolny .kariera {
