@@ -459,9 +459,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 
-//TODO MAIN PAGE
-
-
 //TODO PROJECT PAGE - OTHER (2 projects)
 // - COPY Moiizo file and adjust the project content - 6
 
