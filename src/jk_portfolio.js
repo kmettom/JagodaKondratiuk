@@ -454,11 +454,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // Project grid animate on scroll
 
-//TODO PROJECT PAGE - MOIIZO
-// - Moiizo RWD - 4
-
 //TODO PROJECT PAGE - OTHER (2 projects)
-// - COPY Moiizo file and adjust the project content - 4
+// - COPY Moiizo file and adjust the project content - 6
 
 //TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors
 // - Header navigation layout and functionality - anchor to contact - 4
@@ -467,6 +464,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 // DONE DONE DONE
+// - Moiizo RWD - 4 - DONE
 // Projects grid fill in data
 // Projects grid RWD
 // - Password for case study STYLE & RWD - 4 - DONE
