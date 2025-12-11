@@ -140,9 +140,16 @@
     &.align-top {
       align-items: baseline;
     }
+    .project-block-side{
+      width: 50%;
+    }
   }
   img{
-    max-width: 100%;
+    width: 100%;
+
+    @include respond-width($w-s) {
+      //max-width: 100%;
+    }
   }
 
   .opis-ogolny .lata {
