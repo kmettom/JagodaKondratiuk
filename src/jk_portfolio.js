@@ -230,8 +230,17 @@ const headerTextMove = (_scrollPos) => {
 /*************************** */
 
 const projectsSectionEl = document.getElementById('projectsSection');
+const projectsEl = document.getElementsByClassName('project-one');
 const projectsMove = (_scrollPos) => {
-    console.log("project move", _scrollPos)
+    const move = (_scrollPos - projectsSection.top) / 10;
+    const moveReverse = -move
+    for (let i = 0; i < projectsEl.length; i++) {
+        if (projectsEl[i].classList.contains('project-push-down')) {
+            projectsEl[i].style.transform = `translate(0px, ${move}px)`;
+        } else {
+            projectsEl[i].style.transform = `translate(0px, ${moveReverse}px)`;
+        }
+    }
 }
 
 
@@ -452,7 +461,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 //TODO MAIN PAGE
 
-// Project grid animate on scroll
 
 //TODO PROJECT PAGE - OTHER (2 projects)
 // - COPY Moiizo file and adjust the project content - 6
@@ -464,6 +472,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 // DONE DONE DONE
+// Project grid animate on scroll
 // - Moiizo RWD - 4 - DONE
 // Projects grid fill in data
 // Projects grid RWD
