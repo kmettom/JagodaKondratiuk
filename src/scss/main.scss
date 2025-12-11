@@ -49,7 +49,6 @@ html {
 
 
 body {
-  cursor: none;
   background: $blue;
   color: $white;
   padding: 0px;
@@ -70,7 +69,6 @@ body {
 
 a {
   transition: $easein 0.3s color;
-  cursor: none;
   color: $white;
 }
 
@@ -152,7 +150,6 @@ section {
   -webkit-transition: all .25s cubic-bezier(.615, .19, .305, .91);
   -moz-transition: all .25s cubic-bezier(.615, .19, .305, .91);
   transition: all .25s cubic-bezier(.615, .19, .305, .91);
-  // cursor: pointer;
 }
 
 #cssda-badge:hover {

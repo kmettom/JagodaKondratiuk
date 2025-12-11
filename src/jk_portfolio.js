@@ -300,7 +300,9 @@ const projectPageScreenLockInit = () => {
         } else {
             window.localStorage.setItem('lockContent', JSON.stringify(true));
             const lockContentEl = document.querySelector('#lockContent');
+            const sectionsWrapperEl = document.querySelector('.sections-wrapper');
             lockContentEl.remove();
+            sectionsWrapperEl.style.filter = 'blur(10px)';
             screenLockPassSubmit.addEventListener('click', (event) => {
                 const inputValue = screenLockInput.value.trim();
                 hashPassword(inputValue).then((inputHash) => {
