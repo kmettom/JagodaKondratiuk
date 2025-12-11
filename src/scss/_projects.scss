@@ -7,9 +7,6 @@
   max-width: 1200px;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  @include respond-width($w-m) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
 
   a.project-one {
     color: $white;
@@ -24,7 +21,12 @@
 
     &:hover {
       .project-bg {
+        filter: grayscale(0);
         transform: scale(1.05);
+      }
+      .project-content-bottom{
+        height: 20px;
+        padding-top: 12px;
       }
     }
   }
@@ -39,8 +41,10 @@
     object-fit: cover;
     opacity: 1;
     transform: scale(1);
+    filter: grayscale(1);
     transition: ease all 0.3s;
     z-index: -1;
+    height: 100%;
   }
 
   .case-study-label {
@@ -75,6 +79,10 @@
   }
 
   .project-content-bottom {
+    transition: ease all 0.3s;
+    height: 0;
+    padding-top: 0;
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
   }
@@ -93,7 +101,7 @@
   .project-name {
     font-family: "Monument";
     font-size: 50px;
-    padding-bottom: 7px;
+    line-height: 100%;
     @include respond-width($w-m) {
       font-size: 35px;
     }

@@ -452,7 +452,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 //TODO MAIN PAGE
 
-// Projects grid fill in data
 // Project grid animate on scroll
 
 //TODO PROJECT PAGE - MOIIZO
@@ -468,6 +467,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 // DONE DONE DONE
+// Projects grid fill in data
 // Projects grid RWD
 // - Password for case study STYLE & RWD - 4 - DONE
 // - Moiizo animations adjust with conditions - 4 - DONE
