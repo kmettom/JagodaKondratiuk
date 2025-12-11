@@ -6,10 +6,10 @@
   width: 100%;
   max-width: 1200px;
   gap: 20px;
-  grid-template-columns: repeat(
-    auto-fit,
-                  minmax(360px, 1fr)
-  );
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  @include respond-width($w-m) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 
   a.project-one {
     color: $white;
@@ -20,16 +20,27 @@
     position: relative;
     grid-row: span 2;
     overflow: hidden;
+    border-radius: 25px;
+
+    &:hover {
+      .project-bg {
+        transform: scale(1.05);
+      }
+    }
   }
 
   .project-push-down {
-    top: 120px
+    //top: 120px
   }
 
   .project-bg {
+    position: relative;
     width: 100%;
     object-fit: cover;
     opacity: 1;
+    transform: scale(1);
+    transition: ease all 0.3s;
+    z-index: -1;
   }
 
   .case-study-label {
