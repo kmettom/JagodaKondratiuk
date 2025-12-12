@@ -82,6 +82,11 @@ module.exports = {
             filename: "projects/bundleboon.html",
             title: 'Caching',
         }),
+        new HtmlWebpackPlugin({
+            template: './src/projects/rods-and-cones.html',
+            filename: "projects/rods-and-cones.html",
+            title: 'Caching',
+        }),
 
     ]
 
