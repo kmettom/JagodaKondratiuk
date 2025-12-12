@@ -75,6 +75,25 @@
     }
   }
 
+  #projectNameToAniIn{
+    opacity: 0;
+    transition: ease all 0.7s;
+    transform: translateY(20px);
+    &.activate{
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  img.project-header-image{
+    transform: scale(0.98);
+    transition: ease all 1.75s;
+    &.activate{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
   .header-stats {
     display: flex;
     justify-content: space-between;

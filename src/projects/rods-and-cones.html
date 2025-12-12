@@ -43,9 +43,11 @@
             color: #e2e2e2;
         }
 
-        /*img {*/
-        /*    opacity: 0;*/
-        /*}*/
+        #headerInfo,
+        #projectNameToAniIn,
+        img.project-header-image {
+            opacity: 0;
+        }
 
     </style>
 
@@ -102,12 +104,12 @@
         <section id="headerText" class="">
             <div class="project-header">
                 <div class="photo-activate padding-top-l">
-                    <img class="hide-sm" src="../img/projects/rods/rods_header.png"
+                    <img class="hide-sm project-header-image" src="../img/projects/rods/rods_header.png"
                          alt="rods project"/>
-                    <img class="show-sm" src="../img/projects/rods/rods_header_sm.png"
+                    <img class="show-sm project-header-image" src="../img/projects/rods/rods_header_sm.png"
                          alt="rods project"/>
                 </div>
-                <h1 class="header-project-name header-h1 padding-top-l">
+                <h1 id="projectNameToAniIn" class="header-project-name header-h1 padding-top-l">
                     Rods & Cones
                 </h1>
                 <div class="header-project-description padding-bottom-l padding-top-m ">

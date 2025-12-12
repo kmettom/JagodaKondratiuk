@@ -65,6 +65,17 @@ const pageEnterAnimation = () => {
     setTimeout(() => {
         document.getElementById('headerInfo').classList.add('activate');
         document.getElementById('headerText').classList.add('activate');
+        const headerImg = document.getElementsByClassName('project-header-image')
+        if (headerImg && headerImg.length > 0) {
+            for (let i = 0; i < headerImg.length; i++) {
+                headerImg[i].classList.add('activate');
+            }
+        }
+        const projectNameToAniIn = document.getElementById('projectNameToAniIn')
+        if (projectNameToAniIn) {
+            projectNameToAniIn.classList.add('activate')
+        }
+
     }, 750);
     setTimeout(() => {
         scrollInstance.init(sectionsAnimateOnScroll);
