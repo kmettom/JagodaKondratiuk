@@ -73,18 +73,18 @@ module.exports = {
             title: 'Caching',
         }),
         new HtmlWebpackPlugin({
-            template: './src/projects/moiizo.html',
-            filename: "projects/moiizo.html",
+            template: './src/projects/moiizo/index.html',
+            filename: "projects/moiizo/index.html",
             title: 'Caching',
         }),
         new HtmlWebpackPlugin({
-            template: './src/projects/bundleboon.html',
-            filename: "projects/bundleboon.html",
+            template: './src/projects/bundleboon/index.html',
+            filename: "projects/bundleboon/index.html",
             title: 'Caching',
         }),
         new HtmlWebpackPlugin({
-            template: './src/projects/rods-and-cones.html',
-            filename: "projects/rods-and-cones.html",
+            template: './src/projects/rods-and-cones/index.html',
+            filename: "projects/rods-and-cones/index.html",
             title: 'Caching',
         }),
 

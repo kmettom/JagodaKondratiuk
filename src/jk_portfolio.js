@@ -467,17 +467,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
     init();
 });
 
+//TODO QA:
+// Links update to no .html
+// RWD content check on projects
+// Image exports from projects 2x
+// Project side image large on mobile side scroll of the image
+// Project page side menu - hovers on mouse
+// MAIN page - RWD of old sections on main page
 
-//TODO PROJECT PAGE - OTHER (2 projects)
-// - COPY Moiizo file and adjust the project content - 6
 
 //TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors
+// - Transition from ScreenLock to Open - add animation before the reload - 2
 // - Header navigation layout and functionality - anchor to contact - 4
 // - Header navigation layout and functions - MVP - no About and Projects - 2
-// - Transition from ScreenLock to Open - add animation before the reload - 2
 
 
 // DONE DONE DONE
+// - COPY Moiizo file and adjust the project content - 6
 // Project grid animate on scroll
 // - Moiizo RWD - 4 - DONE
 // Projects grid fill in data
