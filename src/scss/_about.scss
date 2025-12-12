@@ -96,6 +96,7 @@
   margin-bottom: 25vh;
   @include respond-width($w-s){
     display: block;
+    margin-bottom: 15vh;
   }
 
   .kariera {

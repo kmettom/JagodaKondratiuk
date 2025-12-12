@@ -168,11 +168,9 @@ const sectionsAnimateOnScroll = () => {
     }
     if (projectsSection) {
         if (scrollPos + window.innerHeight > projectsSection.top && scrollPos < projectsSection.top + projectsSection.height) {
-            projectsMove(scrollPos)
-            // aboutInfoAni(scrollPos); // about me section - animate color change and sticky year headline
-            // if (projectPageNavItems && projectPageNavItems.length > 0) {
-            //     projectPageNavigationTrack(scrollPos);
-            // }
+            if (!getUserAgent.isMobile) {
+                projectsMove(scrollPos)
+            }
         }
     }
     if (footerSection) {
@@ -236,9 +234,9 @@ const projectsMove = (_scrollPos) => {
     const moveReverse = -move
     for (let i = 0; i < projectsEl.length; i++) {
         if (projectsEl[i].classList.contains('project-push-down')) {
-            projectsEl[i].style.transform = `translate(0px, ${move}px)`;
-        } else {
             projectsEl[i].style.transform = `translate(0px, ${moveReverse}px)`;
+        } else {
+            projectsEl[i].style.transform = `translate(0px, ${move}px)`;
         }
     }
 }

@@ -51,7 +51,7 @@
 
   }
 
-  ul {
+  ul, ol {
     padding-left: 16px;
   }
 
@@ -137,14 +137,17 @@
     @include respond-width($w-s) {
       display: block;
     }
+
     &.align-top {
       align-items: baseline;
     }
-    .project-block-side{
+
+    .project-block-side {
       width: 50%;
     }
   }
-  img{
+
+  img {
     width: 100%;
 
     @include respond-width($w-s) {
