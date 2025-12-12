@@ -179,7 +179,7 @@ const sectionsAnimateOnScroll = () => {
     }
     if (projectsSection) {
         if (scrollPos + window.innerHeight > projectsSection.top && scrollPos < projectsSection.top + projectsSection.height) {
-            if (!getUserAgent.isMobile) {
+            if (!getUserAgent.isMobile && window.innerWidth > 1050) {
                 projectsMove(scrollPos)
             }
         }
