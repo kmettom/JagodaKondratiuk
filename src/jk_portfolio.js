@@ -301,12 +301,12 @@ function hashPassword(password) {
     });
 }
 
-const PASSWORD_HASH = 'd052ae53d07735dc1b2d93fa98b97ecadef048cf8e882afadb4fc3b0c7301fb3'; //abcxyz
+const PASSWORD_HASH = '787600ebe6d6c75b6bc0b2db0bfd6aeec78897b67d3192e2208bc8b714237841'; //abcxyz
 
 const projectPageScreenLockInit = () => {
 
     // hashPassword('').then((pass) => {
-    //     console.log("pass - unlock", pass)
+    //     console.log("pass", pass)
     // })
 
     const screenLockPassSubmit = document.querySelector('#screenLockPassSubmit');
