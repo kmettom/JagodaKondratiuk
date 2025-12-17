@@ -61,6 +61,9 @@
     transition: ease all 0.3s;
     z-index: -1;
     height: 100%;
+    @include respond-width($w-s){
+      filter: initial;
+    }
   }
 
   .case-study-label {
