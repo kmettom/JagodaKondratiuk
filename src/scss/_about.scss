@@ -11,14 +11,14 @@
 .photo-left{
   flex: 0 0 40%;
   @include respond-width($w-m-s){
-    flex: 0 0 30%;
+    flex: 0 0 0%;
   }
 }
 .photo-right{
   position: relative;
   flex: 0 0 60%;
   @include respond-width($w-m-s){
-    flex: 0 0 70%;
+    flex: 0 0 100%;
   }
 }
 
@@ -75,6 +75,7 @@
       position: relative;
       margin: 0 auto;
       max-width: 100%;
+      width: 100%;
     }
 
     img {
