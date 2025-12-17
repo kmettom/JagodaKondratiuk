@@ -52,7 +52,6 @@ const writeTime = () => {
         $writeTime.innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
     }
     writeSeconds();
-    $writeTime.innerHTML = date.getMinutes()
     setInterval(() => {
         writeSeconds()
     }, 1000)
@@ -444,9 +443,9 @@ class Cursor {
             scale: 1.6,
         });
         this.cursor.over(".howerki", {
-            borderColor: getUserAgent.isFirefox ? '#e2e2e2' : darkColor,
+            // borderColor: getUserAgent.isFirefox ? '#e2e2e2' : darkColor,
             mixBlendMode: getUserAgent.isFirefox ? "difference" : "screen",
-            background: getUserAgent.isFirefox ? lightColor : darkColor,
+            // background: getCursorBg(),
             scale: 1.6,
         });
         this.cursor.over(".tomas-link", {
@@ -459,7 +458,7 @@ class Cursor {
 
     }
 
-    setBGColor(_color) { // options -> blue darkColor, white #e2e2e2
+    setBGColor(_color) {
         let newBgColor = _color == 'white' ? lightColor : darkColor;
         this.cursor.updateBgColor(newBgColor);
         this.cursor.over(".vi-link", {
