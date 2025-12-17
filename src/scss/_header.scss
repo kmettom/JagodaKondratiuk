@@ -156,4 +156,9 @@
   position: absolute;
   display: inline-block;
   text-align: right;
+  &.piece-right{
+    text-align: left;
+    bottom: 0;
+    right: 0;
+  }
 }

@@ -16,6 +16,7 @@ const init = function () {
         pageEnterAnimation();
         updateSectionPositions();
         setYear();
+        writeTime();
     }, 500);
     cursorInit();
     footerGoToTopBtnListen();
@@ -38,6 +39,23 @@ const setYear = () => {
     for (let i = 0; i < $setYear.length; i++) {
         $setYear[i].innerHTML = date.getFullYear();
     }
+}
+
+/*************************** */
+// writeTime
+/*************************** */
+
+const writeTime = () => {
+    const $writeTime = document.getElementById('writeTime');
+    const writeSeconds = () => {
+        const date = new Date();
+        $writeTime.innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    }
+    writeSeconds();
+    $writeTime.innerHTML = date.getMinutes()
+    setInterval(() => {
+        writeSeconds()
+    }, 1000)
 }
 
 
