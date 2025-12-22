@@ -99,9 +99,9 @@
 .header {
   height: calc(100vh - 70px); // minus header height
   opacity: 0;
-  @include respond-width($w-s) {
-    height: calc(70vh - 70px); // minus header height
-  }
+  //@include respond-width($w-s) {
+  //  height: calc(70vh - 70px); // minus header height
+  //}
 
   .main-text-wrapper {
     position: relative;

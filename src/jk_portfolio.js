@@ -47,9 +47,11 @@ const setYear = () => {
 
 const writeTime = () => {
     const $writeTime = document.getElementById('writeTime');
+    const $writeTimeMobile = document.getElementById('writeTimeMobile');
     const writeSeconds = () => {
         const date = new Date();
         $writeTime.innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+        $writeTimeMobile.innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
     }
     writeSeconds();
     setInterval(() => {
@@ -82,6 +84,7 @@ const pageEnterAnimation = () => {
     setTimeout(() => {
         document.getElementById('headerInfo').classList.add('activate');
         document.getElementById('headerText').classList.add('activate');
+        document.getElementById('headerTextMobile').classList.add('activate');
         const headerImg = document.getElementsByClassName('project-header-image')
         if (headerImg && headerImg.length > 0) {
             for (let i = 0; i < headerImg.length; i++) {
@@ -104,6 +107,7 @@ const pageEnterAnimation = () => {
 /*************************** */
 
 let headerSection;
+let headerSectionMobile;
 let aboutInfoSection;
 let projectsSection;
 let meFotoSection;
@@ -112,6 +116,12 @@ const updateSectionPositions = () => {
     if (headerSectionEl) {
         const headerSectionElRect = headerSectionEl.getBoundingClientRect()
         headerSection = {
+            top: headerSectionElRect.top, height: headerSectionElRect.height
+        };
+    }
+    if (headerSectionElMobile) {
+        const headerSectionElRect = headerSectionElMobile.getBoundingClientRect()
+        headerSectionMobile = {
             top: headerSectionElRect.top, height: headerSectionElRect.height
         };
     }
@@ -181,6 +191,11 @@ const sectionsAnimateOnScroll = () => {
             headerTextMove(scrollPos); // header move lines in opposite way, different speeds
         }
     }
+    if (headerSectionMobile) {
+        if (scrollPos + window.innerHeight > headerSectionMobile.top && scrollPos < headerSectionMobile.top + headerSectionMobile.height) {
+            headerTextMove(scrollPos); // header move lines in opposite way, different speeds
+        }
+    }
     if (meFotoSection) {
         if (scrollPos + window.innerHeight > meFotoSection.top && scrollPos < meFotoSection.top + meFotoSection.height) {
             meFotoParallax(scrollPos); // me-photo section foto parallax
@@ -241,6 +256,7 @@ const footerGoToTopBtnListen = () => {
 
 const headerLines = document.getElementsByClassName('header-line-group');
 const headerSectionEl = document.getElementById('headerText');
+const headerSectionElMobile = document.getElementById('headerTextMobile');
 const headerTextMove = (_scrollPos) => {
     let moveCoeficient = _scrollPos / 10;
     for (var i = 0; i < headerLines.length; i++) {

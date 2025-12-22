@@ -415,4 +415,19 @@ section {
   }
 }
 
+.show-sm {
+  display: none;
+  @include respond-width($w-s) {
+    display: block;
+  }
+}
+
+.hide-sm {
+  display: block;
+  @include respond-width($w-s) {
+    display: none;
+  }
+
+}
+
 
