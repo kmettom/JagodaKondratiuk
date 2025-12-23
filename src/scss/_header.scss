@@ -161,4 +161,8 @@
     bottom: 0;
     right: 0;
   }
+  &.piece-top{
+    top:0;
+    bottom: initial;
+  }
 }
