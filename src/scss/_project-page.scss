@@ -1,9 +1,10 @@
 .project-page {
   font-family: "PPNeueMontreal";
 
-  .header-project-name{
+  .header-project-name {
     text-transform: uppercase;
   }
+
   .header-h1 {
     font-family: "Monument";
     font-size: 50px;
@@ -64,20 +65,22 @@
     }
   }
 
-  #projectNameToAniIn{
+  #projectNameToAniIn {
     opacity: 0;
     transition: ease all 0.7s;
     transform: translateY(20px);
-    &.activate{
+
+    &.activate {
       opacity: 1;
       transform: translateY(0px);
     }
   }
 
-  img.project-header-image{
+  img.project-header-image {
     transform: scale(0.98);
     transition: ease all 1.75s;
-    &.activate{
+
+    &.activate {
       opacity: 1;
       transform: scale(1);
     }
@@ -162,8 +165,17 @@
   img {
     width: 100%;
 
+    &.img-sm-side-scroll {
+      @include respond-width($w-s) {
+        width: auto;
+      }
+    }
+  }
+
+  .img-scroll-wrapper {
     @include respond-width($w-s) {
-      //max-width: 100%;
+      overflow: auto;
+      width: calc(100% + 20px);
     }
   }
 

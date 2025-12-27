@@ -48,11 +48,6 @@ const setYear = () => {
 const writeTime = () => {
     const $writeTime = document.getElementById('writeTime');
     const $writeTimeMobile = document.getElementById('writeTimeMobile');
-    // const writeSeconds = () => {
-    //     const date = new Date();
-    //     $writeTime.innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-    //     $writeTimeMobile.innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-    // }
     const writeSeconds = () => {
         const date = new Date();
 
@@ -68,10 +63,12 @@ const writeTime = () => {
         $writeTime.innerHTML = time;
         $writeTimeMobile.innerHTML = time;
     };
-    writeSeconds();
-    setInterval(() => {
-        writeSeconds()
-    }, 1000)
+    if ($writeTime || $writeTimeMobile) {
+        writeSeconds();
+        setInterval(() => {
+            writeSeconds()
+        }, 1000)
+    }
 }
 
 
@@ -95,11 +92,11 @@ const scrollToContact = () => {
 /*************************** */
 
 const pageEnterAnimation = () => {
-    document.getElementById('firstAnimationOverlay').classList.add('hide');
+    document.getElementById('firstAnimationOverlay')?.classList.add('hide');
     setTimeout(() => {
-        document.getElementById('headerInfo').classList.add('activate');
-        document.getElementById('headerText').classList.add('activate');
-        document.getElementById('headerTextMobile').classList.add('activate');
+        document.getElementById('headerInfo')?.classList.add('activate');
+        document.getElementById('headerText')?.classList.add('activate');
+        document.getElementById('headerTextMobile')?.classList.add('activate');
         const headerImg = document.getElementsByClassName('project-header-image')
         if (headerImg && headerImg.length > 0) {
             for (let i = 0; i < headerImg.length; i++) {
@@ -524,11 +521,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 //TODO QA:
-// MAIN page - RWD of old sections on main page
 // Project page - RWD content check on projects
 // Project page - Image exports from projects 2x
-// Project page - Project side image large on mobile side scroll of the image
-// Project page - side menu - hovers on mouse
 
 
 //TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors
