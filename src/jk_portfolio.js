@@ -113,6 +113,14 @@ const pageEnterAnimation = () => {
 
     }, 750);
     setTimeout(() => {
+        const sidePieces = document.getElementsByClassName('header-line-side-piece')
+        if (sidePieces && sidePieces.length > 0) {
+            for (let i = 0; i < sidePieces.length; i++) {
+                sidePieces[i].classList.add('activate');
+            }
+        }
+    }, 1000)
+    setTimeout(() => {
         scrollInstance.init(sectionsAnimateOnScroll);
     }, 1500);
 };
@@ -516,12 +524,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 //TODO QA:
-// Links update to no .html
-// RWD content check on projects
-// Image exports from projects 2x
-// Project side image large on mobile side scroll of the image
-// Project page side menu - hovers on mouse
 // MAIN page - RWD of old sections on main page
+// Project page - RWD content check on projects
+// Project page - Image exports from projects 2x
+// Project page - Project side image large on mobile side scroll of the image
+// Project page - side menu - hovers on mouse
 
 
 //TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors
@@ -529,20 +536,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // - Header navigation layout and functionality - anchor to contact - 4
 // - Header navigation layout and functions - MVP - no About and Projects - 2
 
-
-// DONE DONE DONE
-// - COPY Moiizo file and adjust the project content - 6
-// Project grid animate on scroll
-// - Moiizo RWD - 4 - DONE
-// Projects grid fill in data
-// Projects grid RWD
-// - Password for case study STYLE & RWD - 4 - DONE
-// - Moiizo animations adjust with conditions - 4 - DONE
-// 1 - Project thumbs refactor style and layout - 8 - DONE
-// 1- Password for case study - 8 - DONE
-// - Side menu active tabs - add anchors to sections - 2 - DONE
-// - Side menu - on Click scroll to functionality - 4 - DONE
-// - Moiizo layout style finish - 4 - DONE
 
 
 
