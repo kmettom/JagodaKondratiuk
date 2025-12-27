@@ -12,7 +12,7 @@
     font-size: 0.8em;
   }
 
-  &#headerInfo.activate{
+  &#headerInfo.activate {
     opacity: 1;
   }
 
@@ -152,17 +152,53 @@
 #headerText {
 
 }
-.header-line-side-piece{
+
+.header-line-group{
+  @include respond-width($w-xs) {
+    padding-bottom: 15px;
+  }
+
+  &.svg-right,
+  &.svg-left{
+    svg{
+      @include respond-width($w-xs) {
+        width: auto;
+      }
+    }
+  }
+  &.svg-left{
+    text-align: left;
+  }
+  &.svg-right{
+    text-align: right;
+  }
+}
+
+.header-line-side-piece {
   position: absolute;
   display: inline-block;
   text-align: right;
-  &.piece-right{
-    text-align: left;
-    bottom: 0;
-    right: 0;
+  @include respond-width($w-xs) {
+    position: relative;
   }
-  &.piece-top{
-    top:0;
+
+  &.piece-right {
+    text-align: left;
+    right: 0;
+
+  }
+
+  &.piece-top {
+    top: 0;
     bottom: initial;
+    @include respond-width($w-xs) {
+      vertical-align: top;
+      top: -5px;
+    }
+  }
+
+  &.piece-bottom {
+    top: initial;
+    bottom: 0;
   }
 }

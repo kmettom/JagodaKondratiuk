@@ -48,11 +48,26 @@ const setYear = () => {
 const writeTime = () => {
     const $writeTime = document.getElementById('writeTime');
     const $writeTimeMobile = document.getElementById('writeTimeMobile');
+    // const writeSeconds = () => {
+    //     const date = new Date();
+    //     $writeTime.innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    //     $writeTimeMobile.innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    // }
     const writeSeconds = () => {
         const date = new Date();
-        $writeTime.innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-        $writeTimeMobile.innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-    }
+
+        let hours = date.getHours();
+        const minutes = date.getMinutes().toString().padStart(2, "0");
+        const seconds = date.getSeconds().toString().padStart(2, "0");
+
+        const ampm = hours >= 12 ? "pm" : "am";
+        hours = hours % 12 || 12; // convert 0 → 12
+
+        const time = `${hours}:${minutes}:${seconds} ${ampm}`;
+
+        $writeTime.innerHTML = time;
+        $writeTimeMobile.innerHTML = time;
+    };
     writeSeconds();
     setInterval(() => {
         writeSeconds()
