@@ -520,10 +520,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     init();
 });
 
-//TODO QA:
-// Project page - RWD content check on projects
-// Project page - Image exports from projects 2x - Bundle , Rods
-
 
 //TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors
 // - Transition from ScreenLock to Open - add animation before the reload - 2
