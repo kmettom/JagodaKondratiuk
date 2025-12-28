@@ -522,7 +522,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 //TODO QA:
 // Project page - RWD content check on projects
-// Project page - Image exports from projects 2x
+// Project page - Image exports from projects 2x - Bundle , Rods
 
 
 //TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors

@@ -157,7 +157,7 @@
       width: 50%;
       @include respond-width($w-s) {
         width: 100%;
-        padding-right: 0px;
+        padding-right: 0;
       }
     }
   }
@@ -168,6 +168,7 @@
     &.img-sm-side-scroll {
       @include respond-width($w-s) {
         width: auto;
+        max-height: 400px;
       }
     }
   }
