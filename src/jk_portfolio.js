@@ -1,28 +1,53 @@
 import styles from './scss/main.scss';
 import cursorDot from './js/cursor.js';
 import {Scroll} from './js/scroll.js';
-import {ProjectsHover} from './js/projects_hover.js';
 
 import {getUserAgent} from './js/useragent.js';
 
 
-let projectsHoverInstance = new ProjectsHover;
 let scrollInstance = new Scroll;
 
 /*************************** */
 // INIT
 /*************************** */
 
+const studio783log = () => {
+    console.log(`
+Developed by
+
+ ████ █████ █     █ ████  ███  ████
+█       █   █     █ █   █  █  █    █
+ ████   █   █     █ █    █ █ █      █
+     █  █    █   █  █   █  █  █    █
+ ████   █     ███   ████  ███  ████
+
+  ██████████   ████████     ████████
+ ░███░░░░███  ███░░░░███   ███░░░░███
+ ░░░    ███  ░███   ░███  ░░░    ░███
+       ███   ░░████████      ██████░
+      ███     ███░░░░███    ░░░░░░███
+     ███     ░███   ░███   ███   ░███
+    ███      ░░████████   ░░████████
+   ░░░        ░░░░░░░░     ░░░░░░░░
+
+  `);
+    console.log("%chttps://783studio.com", "font-size:20px; font-weight:600;");
+};
+
 const init = function () {
+    document.querySelector('body').style.height = window.innerHeight + 'px';
     setTimeout(() => {
         pageEnterAnimation();
         updateSectionPositions();
         setYear();
+        writeTime();
     }, 500);
     cursorInit();
-    projectsHoverInstance.init();
     footerGoToTopBtnListen();
     scrollToContact();
+    projectPageNavItemsListen();
+    projectPageScreenLockInit();
+    studio783log();
 };
 
 const darkColor = '#333232';
@@ -38,6 +63,36 @@ const setYear = () => {
     const $setYear = document.getElementsByClassName('setYear');
     for (let i = 0; i < $setYear.length; i++) {
         $setYear[i].innerHTML = date.getFullYear();
+    }
+}
+
+/*************************** */
+// writeTime
+/*************************** */
+
+const writeTime = () => {
+    const $writeTime = document.getElementById('writeTime');
+    const $writeTimeMobile = document.getElementById('writeTimeMobile');
+    const writeSeconds = () => {
+        const date = new Date();
+
+        let hours = date.getHours();
+        const minutes = date.getMinutes().toString().padStart(2, "0");
+        const seconds = date.getSeconds().toString().padStart(2, "0");
+
+        const ampm = hours >= 12 ? "pm" : "am";
+        hours = hours % 12 || 12; // convert 0 → 12
+
+        const time = `${hours}:${minutes}:${seconds} ${ampm}`;
+
+        $writeTime.innerHTML = time;
+        $writeTimeMobile.innerHTML = time;
+    };
+    if ($writeTime || $writeTimeMobile) {
+        writeSeconds();
+        setInterval(() => {
+            writeSeconds()
+        }, 1000)
     }
 }
 
@@ -62,11 +117,31 @@ const scrollToContact = () => {
 /*************************** */
 
 const pageEnterAnimation = () => {
-    document.getElementById('firstAnimationOverlay').classList.add('hide');
+    document.getElementById('firstAnimationOverlay')?.classList.add('hide');
     setTimeout(() => {
-        document.getElementById('headerInfo').classList.add('activate');
-        document.getElementById('headerText').classList.add('activate');
+        document.getElementById('headerInfo')?.classList.add('activate');
+        document.getElementById('headerText')?.classList.add('activate');
+        document.getElementById('headerTextMobile')?.classList.add('activate');
+        const headerImg = document.getElementsByClassName('project-header-image')
+        if (headerImg && headerImg.length > 0) {
+            for (let i = 0; i < headerImg.length; i++) {
+                headerImg[i].classList.add('activate');
+            }
+        }
+        const projectNameToAniIn = document.getElementById('projectNameToAniIn')
+        if (projectNameToAniIn) {
+            projectNameToAniIn.classList.add('activate')
+        }
+
     }, 750);
+    setTimeout(() => {
+        const sidePieces = document.getElementsByClassName('header-line-side-piece')
+        if (sidePieces && sidePieces.length > 0) {
+            for (let i = 0; i < sidePieces.length; i++) {
+                sidePieces[i].classList.add('activate');
+            }
+        }
+    }, 1000)
     setTimeout(() => {
         scrollInstance.init(sectionsAnimateOnScroll);
     }, 1500);
@@ -77,31 +152,57 @@ const pageEnterAnimation = () => {
 /*************************** */
 
 let headerSection;
+let headerSectionMobile;
 let aboutInfoSection;
+let projectsSection;
 let meFotoSection;
 let footerSection;
 const updateSectionPositions = () => {
-    const headerSectionElRect = headerSectionEl.getBoundingClientRect()
-    headerSection = {
-        top: headerSectionElRect.top,
-        height: headerSectionElRect.height
-    };
-    const aboutInfoSectionElRect = aboutInfoSectionEl.getBoundingClientRect()
-    aboutInfoSection = {
-        top: aboutInfoSectionElRect.top,
-        height: aboutInfoSectionElRect.height,
-        changePosition: aboutInfoSectionElRect.top + aboutInfoSectionElRect.height / 4
-    };
-    const meFotoSectiolElRect = meFotoSectiolEl.getBoundingClientRect()
-    meFotoSection = {
-        top: meFotoSectiolElRect.top,
-        height: meFotoSectiolElRect.height,
-        changePosition: meFotoSectiolElRect.top + meFotoSectiolElRect.height / 2
-    };
-    const footerSectionElRect = footerSectionEl.getBoundingClientRect()
-    footerSection = {
-        top: footerSectionElRect.top,
-        height: footerSectionElRect.height,
+    if (headerSectionEl) {
+        const headerSectionElRect = headerSectionEl.getBoundingClientRect()
+        headerSection = {
+            top: headerSectionElRect.top, height: headerSectionElRect.height
+        };
+    }
+    if (headerSectionElMobile) {
+        const headerSectionElRect = headerSectionElMobile.getBoundingClientRect()
+        headerSectionMobile = {
+            top: headerSectionElRect.top, height: headerSectionElRect.height
+        };
+    }
+    if (aboutInfoSectionEl) {
+        const aboutInfoSectionElRect = aboutInfoSectionEl.getBoundingClientRect()
+        const isProjectPage = aboutInfoSectionEl.classList.contains('project-content-wrapper');
+        aboutInfoSection = {
+            top: aboutInfoSectionElRect.top,
+            height: aboutInfoSectionElRect.height,
+            isProjectPage: isProjectPage,
+            changePosition: isProjectPage ? aboutInfoSectionElRect.top : aboutInfoSectionElRect.top + aboutInfoSectionElRect.height / 4
+        };
+    }
+    if (meFotoSectiolEl) {
+        const meFotoSectiolElRect = meFotoSectiolEl.getBoundingClientRect()
+        meFotoSection = {
+            top: meFotoSectiolElRect.top,
+            height: meFotoSectiolElRect.height,
+            changePosition: meFotoSectiolElRect.top + meFotoSectiolElRect.height / 2
+        };
+    }
+    if (projectsSectionEl) {
+        const projectsSectionElRect = projectsSectionEl.getBoundingClientRect()
+        // const isProjectPage = projectsSectionEl.classList.contains('project-content-wrapper');
+        projectsSection = {
+            top: projectsSectionElRect.top,
+            height: projectsSectionElRect.height,
+            // isProjectPage: isProjectPage,
+            // changePosition: isProjectPage ? projectsSectionElRect.top : projectsSectionElRect.top + projectsSectionElRect.height / 4
+        };
+    }
+    if (footerSectionEl) {
+        const footerSectionElRect = footerSectionEl.getBoundingClientRect()
+        footerSection = {
+            top: footerSectionElRect.top, height: footerSectionElRect.height,
+        }
     }
 };
 
@@ -115,14 +216,14 @@ window.onresize = function (event) {
 /*************************** */
 
 let scrollPos = scrollInstance.Y_pos;
-const minScrollChange = 3;
+// const minScrollChange = 3;
 const sectionsAnimateOnScroll = () => {
 
-    if (projectsHoverInstance.hoverActive) {
-        if (scrollPos - minScrollChange > scrollInstance.Y_pos || scrollPos + minScrollChange < scrollInstance.Y_pos) {
-            projectsHoverInstance.resetOnScroll = true;
-        }
-    }
+    // if (projectsHoverInstance.hoverActive) {
+    //     if (scrollPos - minScrollChange > scrollInstance.Y_pos || scrollPos + minScrollChange < scrollInstance.Y_pos) {
+    //         projectsHoverInstance.resetOnScroll = true;
+    //     }
+    // }
 
     if (scrollPos == scrollInstance.Y_pos) return;
     scrollPos = scrollInstance.Y_pos;
@@ -130,37 +231,51 @@ const sectionsAnimateOnScroll = () => {
     if (!sectionsToActivate[sectionsToActivate.length - 1].classList.contains('activaded')) {
         activateNextSection(scrollPos); // activate sections with class, to animate in elements
     }
-    if (scrollPos + window.innerHeight > headerSection.top && scrollPos < headerSection.top + headerSection.height) {
-        headerTextMove(scrollPos); // header move lines in opposite way, different speeds
+    if (headerSection) {
+        if (scrollPos + window.innerHeight > headerSection.top && scrollPos < headerSection.top + headerSection.height) {
+            headerTextMove(scrollPos); // header move lines in opposite way, different speeds
+        }
     }
-    if (scrollPos + window.innerHeight > meFotoSection.top && scrollPos < meFotoSection.top + meFotoSection.height) {
-        meFotoParallax(scrollPos); // me-photo section foto parallax
+    if (headerSectionMobile) {
+        if (scrollPos + window.innerHeight > headerSectionMobile.top && scrollPos < headerSectionMobile.top + headerSectionMobile.height) {
+            headerTextMove(scrollPos); // header move lines in opposite way, different speeds
+        }
     }
-    if (scrollPos + window.innerHeight > aboutInfoSection.top && scrollPos < aboutInfoSection.top + aboutInfoSection.height) {
-        aboutInfoAni(scrollPos); // about me section - animate color change and sticky year headline
+    if (meFotoSection) {
+        if (scrollPos + window.innerHeight > meFotoSection.top && scrollPos < meFotoSection.top + meFotoSection.height) {
+            meFotoParallax(scrollPos); // me-photo section foto parallax
+        }
     }
-    if (scrollPos + window.innerHeight > footerSection.top) {
-        footerAnimateIn(scrollPos); // animate in the footer on scroll
+    if (aboutInfoSection) {
+        if (scrollPos + window.innerHeight > aboutInfoSection.top && scrollPos < aboutInfoSection.top + aboutInfoSection.height) {
+            aboutInfoAni(scrollPos); // about me section - animate color change and sticky year headline
+            if (projectPageNavItems && projectPageNavItems.length > 0) {
+                projectPageNavigationTrack(scrollPos);
+            }
+        }
     }
-
+    if (projectsSection) {
+        if (scrollPos + window.innerHeight > projectsSection.top && scrollPos < projectsSection.top + projectsSection.height) {
+            if (!getUserAgent.isMobile && window.innerWidth > 1050) {
+                projectsMove(scrollPos)
+            }
+        }
+    }
+    if (footerSection) {
+        if (scrollPos + window.innerHeight > footerSection.top) {
+            footerAnimateIn(scrollPos); // animate in the footer on scroll
+        }
+    }
 }
 
-// let sectionsToActivate;
 const sectionsToActivate = document.getElementsByClassName('section-activate');
-let activeSectionIndex;
 const activateNextSection = (_scrollPos) => {
     for (var i = 0; i < sectionsToActivate.length; i++) {
         if (_scrollPos + window.innerHeight > sectionsToActivate[i].offsetTop + window.innerHeight / 4) {
             sectionsToActivate[i].classList.add('activaded');
-            // activeSectionIndex = i;
-            // requestAnimationFrame( addClassToSection );
         }
     }
 };
-
-// const addClassToSection = () => {
-//   sectionsToActivate[activeSectionIndex].classList.add('activaded');
-// };
 
 /*************************** */
 // FOOTER animate in
@@ -186,12 +301,113 @@ const footerGoToTopBtnListen = () => {
 
 const headerLines = document.getElementsByClassName('header-line-group');
 const headerSectionEl = document.getElementById('headerText');
+const headerSectionElMobile = document.getElementById('headerTextMobile');
 const headerTextMove = (_scrollPos) => {
     let moveCoeficient = _scrollPos / 10;
     for (var i = 0; i < headerLines.length; i++) {
         let move = headerLines[i].getAttribute('data-direction') == 'left' ? -moveCoeficient : moveCoeficient;
         move = move * headerLines[i].getAttribute('data-movecoef');
         headerLines[i].style.transform = 'translate(' + move + 'px , 0px)';
+    }
+}
+
+
+/*************************** */
+// PROJECTS move
+/*************************** */
+
+const projectsSectionEl = document.getElementById('projectsSection');
+const projectsEl = document.getElementsByClassName('project-one');
+const projectsMove = (_scrollPos) => {
+    const move = (_scrollPos - projectsSection.top) / 10;
+    const moveReverse = -move
+    for (let i = 0; i < projectsEl.length; i++) {
+        if (projectsEl[i].classList.contains('project-push-down')) {
+            projectsEl[i].style.transform = `translate(0px, ${moveReverse}px)`;
+        } else {
+            projectsEl[i].style.transform = `translate(0px, ${move}px)`;
+        }
+    }
+}
+
+
+/*************************** */
+// Portfolio menu tracking and scroll
+/*************************** */
+
+const projectPageNavItems = document.querySelectorAll(".jk-nav-track");
+const projectPageNavSections = document.querySelectorAll(".jk-section-track");
+let currentActiveIndex = null;
+const activeMarginTop = 50
+const projectPageNavigationTrack = (_scrollPos) => {
+    for (let i = 0; i < projectPageNavSections.length; i++) {
+        if (projectPageNavSections[i].getBoundingClientRect().top < activeMarginTop && projectPageNavSections[i].getBoundingClientRect().bottom > activeMarginTop) {
+            if (currentActiveIndex !== i) {
+                currentActiveIndex = i;
+                projectPageNavItems[i].classList.add('active')
+            }
+        } else {
+            projectPageNavItems[i].classList.remove('active')
+        }
+    }
+}
+
+const projectPageNavItemsListen = () => {
+    if (projectPageNavItems && projectPageNavItems.length > 0) {
+        for (let i = 0; i < projectPageNavItems.length; i++) {
+            projectPageNavItems[i].addEventListener('click', (event) => {
+                const destination = projectPageNavSections[i].offsetTop;
+                scrollInstance.Y_dest_update = destination;
+            })
+        }
+    }
+}
+
+const screenUnlock = () => {
+    const screenLock = document.querySelector('#screenLock');
+    screenLock.style.display = 'none';
+}
+
+function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    return crypto.subtle.digest('SHA-256', data).then((hashBuffer) => {
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray
+            .map((b) => b.toString(16).padStart(2, '0'))
+            .join('');
+    });
+}
+
+const PASSWORD_HASH = '787600ebe6d6c75b6bc0b2db0bfd6aeec78897b67d3192e2208bc8b714237841'; //abcxyz
+
+const projectPageScreenLockInit = () => {
+
+    // hashPassword('').then((pass) => {
+    // })
+
+    const screenLockPassSubmit = document.querySelector('#screenLockPassSubmit');
+
+    if (screenLockPassSubmit) {
+        const locked = window.localStorage.getItem('lockContent');
+        if (locked === 'false') {
+            screenUnlock();
+        } else {
+            window.localStorage.setItem('lockContent', JSON.stringify(true));
+            const lockContentEl = document.querySelector('#lockContent');
+            const sectionsWrapperEl = document.querySelector('.sections-wrapper');
+            lockContentEl.remove();
+            sectionsWrapperEl.style.filter = 'blur(10px)';
+            screenLockPassSubmit.addEventListener('click', (event) => {
+                const inputValue = screenLockInput.value.trim();
+                hashPassword(inputValue).then((inputHash) => {
+                    if (inputHash === PASSWORD_HASH) {
+                        window.localStorage.setItem('lockContent', JSON.stringify(false));
+                        window.location.reload();
+                    }
+                })
+            })
+        }
     }
 }
 
@@ -223,6 +439,7 @@ const updateStickyHeaderPosition = () => {
 
 let scrollPosBackup;
 const aboutInfoAni = function (_scrollPos) {
+
     if (_scrollPos > aboutInfoSection.top && window.innerWidth > 768) {
         let scrollSize = _scrollPos - scrollPosBackup;
 
@@ -241,15 +458,9 @@ const aboutInfoAni = function (_scrollPos) {
 
     if (aboutInfoSection.changePosition < _scrollPos && currentColorTheme == 'dark') {
         requestAnimationFrame(changeToLigth);
-        // document.querySelector("body").classList.add("ligth");
-        // cursorInstance.setBGColor('blue');
-        // currentColorTheme = 'ligth';
 
     } else if (aboutInfoSection.changePosition > _scrollPos && currentColorTheme == 'ligth') {
         requestAnimationFrame(changeToDark);
-        // document.querySelector("body").classList.remove("ligth");
-        // cursorInstance.setBGColor('white');
-        // currentColorTheme = 'dark';
     }
 
 };
@@ -273,11 +484,7 @@ const meFotoParallax = function (_scrollPos) {
 class Cursor {
     constructor() {
         this.cursor = cursorDot({
-            easing: 4,
-            diameter: 50,
-            borderWidth: 1,
-            borderColor: "#e2e2e2",
-            background: "transparent",
+            easing: 4, diameter: 50, borderWidth: 1, borderColor: "#e2e2e2", background: "transparent",
         });
     }
 
@@ -287,10 +494,7 @@ class Cursor {
             borderColor: "#e2e2e2",
         });
         this.cursor.over("#scrollToTopTrigger", {
-            borderColor: "#e2e2e2",
-            background: "#e2e2e2",
-            mixBlendMode: "difference",
-            scale: 1.6,
+            borderColor: "#e2e2e2", background: "#e2e2e2", mixBlendMode: "difference", scale: 1.6,
         });
         this.cursor.over(".vi-link", {
             borderColor: darkColor,
@@ -299,9 +503,9 @@ class Cursor {
             scale: 1.6,
         });
         this.cursor.over(".howerki", {
-            borderColor: getUserAgent.isFirefox ? '#e2e2e2' : darkColor,
+            // borderColor: getUserAgent.isFirefox ? '#e2e2e2' : darkColor,
             mixBlendMode: getUserAgent.isFirefox ? "difference" : "screen",
-            background: getUserAgent.isFirefox ? lightColor : darkColor,
+            // background: getCursorBg(),
             scale: 1.6,
         });
         this.cursor.over(".tomas-link", {
@@ -310,19 +514,11 @@ class Cursor {
             background: getUserAgent.isFirefox ? lightColor : darkColor,
         });
 
-        // this.cursor.over(".awwards-ribbon", {
-        //   borderColor: getUserAgent.isFirefox ? darkColor : darkColor,
-        //   mixBlendMode: getUserAgent.isFirefox ? "initial" : "initial",
-        //   background: getUserAgent.isFirefox ? darkColor : darkColor ,
-        //   scale: 1.2,
-        //
-        // });
-
         this.setBGColor('white');
 
     }
 
-    setBGColor(_color) { // options -> blue darkColor, white #e2e2e2
+    setBGColor(_color) {
         let newBgColor = _color == 'white' ? lightColor : darkColor;
         this.cursor.updateBgColor(newBgColor);
         this.cursor.over(".vi-link", {
@@ -347,3 +543,15 @@ var cursorInit = function () {
 document.addEventListener("DOMContentLoaded", function (event) {
     init();
 });
+
+
+//TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors
+// - Transition from ScreenLock to Open - add animation before the reload - 2
+// - Header navigation layout and functionality - anchor to contact - 4
+// - Header navigation layout and functions - MVP - no About and Projects - 2
+
+
+
+
+
+

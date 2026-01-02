@@ -11,14 +11,14 @@
 .photo-left{
   flex: 0 0 40%;
   @include respond-width($w-m-s){
-    flex: 0 0 30%;
+    flex: 0 0 0%;
   }
 }
 .photo-right{
   position: relative;
   flex: 0 0 60%;
   @include respond-width($w-m-s){
-    flex: 0 0 70%;
+    flex: 0 0 100%;
   }
 }
 
@@ -66,6 +66,7 @@
     height: 100%;
     overflow: hidden;
     position: relative;
+    border-radius: 25px;
     //position: absolute;
     top: 0;
     left: 0;
@@ -74,6 +75,7 @@
       position: relative;
       margin: 0 auto;
       max-width: 100%;
+      width: 100%;
     }
 
     img {
@@ -96,6 +98,7 @@
   margin-bottom: 25vh;
   @include respond-width($w-s){
     display: block;
+    margin-bottom: 15vh;
   }
 
   .kariera {

@@ -1,0 +1,323 @@
+.project-page {
+  font-family: "PPNeueMontreal";
+
+  .header-project-name {
+    text-transform: uppercase;
+  }
+
+  .header-h1 {
+    font-family: "Monument";
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    @include respond-width($w-s) {
+      font-size: 30px;
+    }
+  }
+
+  .header-h2 {
+    font-family: "Monument";
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header-project-description {
+    max-width: 748px;
+    line-height: 190%;
+    letter-spacing: 0.02em;
+  }
+
+  .text-base {
+    font-family: "PPNeueMontreal";
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 160%;
+    @include respond-width($w-s) {
+      font-size: 14px;
+    }
+  }
+
+
+  ul, ol {
+    padding-left: 16px;
+  }
+
+  strong {
+    font-family: "PPNeueMontrealMedium";
+    font-weight: bold;
+  }
+
+  .text-sm {
+    font-family: "PPNeueMontreal";
+    font-size: 12px;
+  }
+
+  .stat-value {
+    padding-top: 3px;
+  }
+
+  .menu-text {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  #projectNameToAniIn {
+    opacity: 0;
+    transition: ease all 0.7s;
+    transform: translateY(20px);
+
+    &.activate {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  img.project-header-image {
+    transform: scale(0.98);
+    transition: ease all 1.75s;
+
+    &.activate {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .header-stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include respond-width($w-s) {
+      justify-content: flex-start;
+    }
+  }
+
+  .header-stats-block {
+    @include respond-width($w-s) {
+      width: 50%;
+      padding-bottom: 20px;
+    }
+  }
+
+  .padding-right-m {
+    padding-right: 40px;
+  }
+
+  .padding-top-xs {
+    padding-top: 20px;
+  }
+
+  .padding-top-xxs {
+    padding-top: 10px;
+  }
+
+  .padding-top-s {
+    padding-top: 30px;
+  }
+
+  .padding-top-m {
+    padding-top: 40px;
+  }
+
+  .margin-top-xl {
+    margin-top: 80px;
+  }
+
+  .padding-top-xl {
+    padding-top: 80px;
+  }
+
+  .padding-top-l {
+    padding-top: 50px;
+  }
+
+  .margin-top-l {
+    margin-top: 50px;
+  }
+
+  .padding-bottom-l {
+    padding-bottom: 50px;
+  }
+
+  .project-block {
+    display: flex;
+    align-items: center;
+    @include respond-width($w-s) {
+      display: block;
+    }
+
+    &.align-top {
+      align-items: baseline;
+    }
+
+    .project-block-side {
+      width: 50%;
+      @include respond-width($w-s) {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+
+    &.img-sm-side-scroll {
+      @include respond-width($w-s) {
+        width: auto;
+        max-height: 400px;
+      }
+    }
+  }
+
+  .img-scroll-wrapper {
+    @include respond-width($w-s) {
+      overflow: auto;
+      width: calc(100% + 20px);
+    }
+  }
+
+  .opis-ogolny .lata {
+    font-size: 16px;
+    font-family: "PPNeueMontreal";
+    font-weight: 400;
+    flex: 0 0 35%;
+    margin-top: 0;
+    @include respond-width($w-s) {
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+  }
+
+  .opis-ogolny .kariera {
+    flex: 0 0 65%;
+  }
+
+  .jk-nav-track {
+    .text {
+      &:before {
+        content: "•";
+        font-size: 25px;
+        font-weight: bold;
+        bottom: 2px;
+        position: relative;
+        display: inline-block;
+        width: 0px;
+        overflow: hidden;
+        vertical-align: middle;
+        transition: ease all 0.3s;
+        font-family: "sans-serif";
+        padding-right: 0px;
+      }
+    }
+
+    &.active {
+      .text {
+        &:before {
+          padding-right: 5px;
+          width: 15px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  #screenLock {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(51, 50, 50, 0.90);
+  }
+
+  .screen-lock-close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    @include respond-width($w-s) {
+      top: 30px;
+      right: 30px;
+    }
+
+    svg {
+      transition: ease all 0.3s;
+    }
+
+    &:hover {
+      svg {
+        transform: scale(0.8);
+      }
+    }
+  }
+
+  .screen-lock-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+
+    .header-h1 {
+      text-transform: uppercase;
+      line-height: 100%;
+    }
+  }
+
+  .screen-lock-input-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  #screenLockInput {
+    width: 320px;
+    max-width: 90%;
+    padding: 25px 80px 25px 25px;
+    border-radius: 50px;
+    background: #E9E9DF;
+    outline: none;
+    border: none;
+    @include respond-width($w-s) {
+      padding: 20px 80px 20px 20px;
+      width: 220px;
+    }
+  }
+
+  #screenLockPassSubmit {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    background: transparent;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    @include respond-width($w-s) {
+      right: 5px;
+    }
+
+    svg {
+      transition: ease all 0.3s;
+    }
+
+    &:hover {
+      svg {
+        transform: scale(0.9);
+      }
+    }
+  }
+}

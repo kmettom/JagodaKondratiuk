@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.location.hostname == 'localhost') return;
+            if (window.location.protocol != "https:") {
+                window.location = 'https://' + window.location.hostname + window.location.pathname + window.location.hash;
+            }
+        }, false);
+    </script>
+    <meta charset="utf-8"/>
+    <meta name="Jagoda Kondratiuk Portfolio"/>
+    <meta name="description" content="Jagoda Kondratiuk - Digital Designer Portfolio"/>
+    <meta name="keywords" content="Jagoda Kondratiuk Portfolio UI UX Digital Designer"/>
+    <meta name="language" content="English"/>
+    <meta name="distribution" content="web"/>
+    <title>Jagoda Kondratiuk</title>
+    <link rel="shortcut icon" href="../../favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+
+        @font-face {
+            font-family: "PPNeueMontreal";
+            src: url('../../font/PPNeueMontreal-Regular.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: "PPNeueMontrealMedium";
+            src: url('../../font/PPNeueMontreal-Medium.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: "Monument";
+            src: url('../../font/Monument.eot'),
+            url('../../font/Monument.eot?#iefix') format('embedded-opentype'),
+            url('../../font/Monument.woff') format('woff'),
+            url('../../font/Monument.ttf') format('truetype');
+        }
+
+        body {
+            background: #e2e2e2;
+            color: #e2e2e2;
+        }
+
+        #headerInfo,
+        #projectNameToAniIn,
+        img.project-header-image {
+            opacity: 0;
+        }
+
+    </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1410147333704843');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=1410147333704843&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+</head>
+
+<body class="project-page">
+
+<div id="firstAnimationOverlay"></div>
+
+<div id="scrollContainer">
+
+    <div class="sections-wrapper">
+
+        <section id="headerInfo" class="menu">
+            <p class="menu-text">
+                <a href="/" class="jagoda howerki"> jagoda kondratiuk <span class="line"></span> </a>
+                <span class="align-right">
+            <span class="amsterdam">portugal</span> <span class="lata1"><span class="setYear">2022</span> <span
+                        class="line"></span> </span>
+          </span>
+            </p>
+        </section>
+
+        <!--------------------------------------HEADER------------------------------------------- -->
+
+        <section id="headerText" class="">
+            <div class="project-header">
+                <div class="photo-activate padding-top-l">
+                    <img class="hide-sm project-header-image" src="../../img/projects/rods/rods_header.png"
+                         alt="rods project"/>
+                    <img class="show-sm project-header-image" src="../../img/projects/rods/rods_header_sm.png"
+                         alt="rods project"/>
+                </div>
+                <h1 id="projectNameToAniIn" class="header-project-name header-h1 padding-top-l">
+                    Rods & Cones
+                </h1>
+                <div class="header-project-description padding-bottom-l padding-top-m ">
+                    Rods & Cones is a Belgium-based MedTech company that enables surgical teams to connect with remote
+                    experts in real time through smart glasses and secure video devices. As the company grew across
+                    Europe and the US, its website needed to clearly communicate this complex technology, improve
+                    accessibility, and drive more qualified demo requests from healthcare professionals.
+                </div>
+                <div class="header-stats">
+                    <div class="header-stats-block">
+                        <div class="stat-name text-sm">year:</div>
+                        <div class="stat-value">2024</div>
+                    </div>
+                    <div class="header-stats-block">
+                        <div class="stat-name text-sm">project:</div>
+                        <div class="stat-value">
+                            Website redesign<br/>
+                            CRO optimisation
+                        </div>
+                    </div>
+                    <div class="header-stats-block">
+                        <div class="stat-name text-sm">role:</div>
+                        <div class="stat-value">UX / UI designer</div>
+                    </div>
+                    <div class="header-stats-block">
+                        <div class="stat-name text-sm">project duration:</div>
+                        <div class="stat-value">8 weeks</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!--------------------------------------PROJECT CONTENT------------------------------------------- -->
+        <div id="lockContent">
+            <section id="aboutInfo" class="opis-ogolny project-content-wrapper section-activate margin-top-xl">
+                <div class="lata project-side-menu" id="aboutInfoYear">
+                    <div class="rok text-activate-move jk-nav-track">
+                    <span class="text howerki">
+                        Challenge
+                    </span>
+                    </div>
+                    <div class="rok text-activate-move padding-top-xxs jk-nav-track">
+                    <span class="text howerki">
+                        Research
+                    </span>
+                    </div>
+                    <div class="rok text-activate-move padding-top-xxs jk-nav-track">
+                    <span class="text howerki">
+                        Define
+                    </span>
+                    </div>
+                    <div class="rok text-activate-move padding-top-xxs jk-nav-track">
+                    <span class="text howerki">
+                        Ideation
+                    </span>
+                    </div>
+                    <div class="rok text-activate-move padding-top-xxs jk-nav-track">
+                    <span class="text howerki">
+                        Validation
+                    </span>
+                    </div>
+                    <div class="rok text-activate-move padding-top-xxs jk-nav-track">
+                    <span class="text howerki">
+                        Implementation
+                    </span>
+                    </div>
+                    <div class="rok text-activate-move padding-top-xxs jk-nav-track">
+                    <span class="text howerki">
+                        Outcome
+                    </span>
+                    </div>
+                </div>
+
+                <div class="kariera project-side-content padding-top-xxs text-base">
+                    <div class="jk-section-track">
+
+                        <h2 class="header-h2 padding-top-l">
+                            Challenge
+                        </h2>
+                        <p>Rods & Cones develops remote-assistance technology that connects medical experts inside and
+                            outside the operating room. Despite strong technology and brand reputation, the website
+                            underperformed as a communication and lead-generation tool.</p>
+                        <p><strong>Analytics revealed:</strong></p>
+                        <p>
+                        <ul>
+                            <li>
+                                Contact-form conversions below 0.3%
+                            </li>
+                            <li>
+                                90% drop-off on the homepage, 97% on product pages
+                            </li>
+                            <li>
+                                Users confused by redundant pages (“Customer Experience Center” vs. “Contact”)
+                            </li>
+                            <li>
+                                Inconsistent visual hierarchy, low contrast, and weak CTA placement
+                            </li>
+                            <li>
+                                Mobile experience underperforming (34% of sessions, but lower engagement)
+                            </li>
+                        </ul>
+                        </p>
+                        <p><strong>Objective:</strong></p>
+                        <p>
+                            Rebuild the digital experience to clearly communicate the product ecosystem, strengthen
+                            brand trust, and increase demo and contact conversions.
+                        </p>
+                        <div>
+                            <img class="img-first hide-sm" src="../../img/projects/rods/rods_1.png"
+                                 alt="flow"/>
+                            <img class="img-first show-sm" src="../../img/projects/rods/rods_1_sm.png"
+                                 alt="flow"/>
+                        </div>
+                    </div>
+                    <div class="jk-section-track">
+
+                        <h2 class="header-h2 padding-top-l">
+                            Research
+                        </h2>
+                        <p>A full UX and CRO audit revealed key barriers in the user journey and conversion flow.</p>
+                        <p><strong>Key findings:</strong></p>
+                        <p>
+                        <ul>
+                            <li>
+                                Drop-offs on top-funnel pages - unclear value proposition
+                            </li>
+                            <li>
+                                Heavy copy blocks and weak visual hierarchy
+                            </li>
+                            <li>
+                                Fragmented CTAs (“Book a Demo”, “Contact”, “Let’s Talk”)
+                            </li>
+                            <li>
+                                Overly complex navigation structure
+                            </li>
+                            <li>
+                                Low accessibility and overuse of stock imagery
+                            </li>
+                            <li>
+                                65% desktop vs. 34% mobile - no adaptive prioritisation
+                            </li>
+                            <li>
+                                Limited visibility of social proof
+                            </li>
+                            <li>
+                                Inconsistent form behaviour
+                            </li>
+                            <li>
+                                Content focused on products rather than complete solutions
+                            </li>
+                        </ul>
+                        </p>
+                        <p>
+                            Data confirmed users struggled to understand what Rods & Cones offers and rarely converted,
+                            highlighting the need for clearer messaging, simplified navigation, consistent CTAs, and
+                            improved accessibility.
+                        </p>
+                        <div>
+                            <img class="img-first" src="../../img/projects/rods/rods_2.png" alt="flow"/>
+                        </div>
+                        <p>
+                            To benchmark best practices, I analysed key competitors:</p>
+                        <ul>
+                            <li>
+                                Vuzix - strong navigation structure (“Solutions by Industry”) and an effective “Find
+                                Your Match” flow
+                            </li>
+                            <li>
+                                Iristick - minimal visual hierarchy and interactive 3D product presentation that aids
+                                understanding
+                            </li>
+                            <li>
+                                Proximie – strong positioning as “the operating system for the operating room,” clear
+                                product segmentation, and trust-building through data and partner credibility.
+                            </li>
+                        </ul>
+                        <p>
+                            Competitors focused on functionality but lacked warmth and emotional connection - an
+                            opportunity for Rods & Cones to lead with clarity, trust, and a more human narrative.
+                        </p>
+                        <div>
+                            <img class="img-first hide-sm" src="../../img/projects/rods/rods_3.png"
+                                 alt="flow"/>
+                            <img class="img-first show-sm" src="../../img/projects/rods/rods_3_sm.png"
+                                 alt="flow"/>
+                        </div>
+                    </div>
+
+                    <div class="jk-section-track">
+                        <div class=" text-activate">
+                            <h2 class="header-h2 padding-top-l">
+                                Define
+                            </h2>
+                            <p>
+                                From these insights, I translated findings into actionable UX objectives focused
+                                on clarity, accessibility, and conversion:
+                            </p>
+                            <ul>
+                                <li>
+                                    Simplified site navigation grouped by user intent
+                                </li>
+                                <li>
+                                    Consistent and visible CTAs
+                                </li>
+                                <li>
+                                    Clear messaging hierarchy and above-the-fold storytelling
+                                </li>
+                                <li>
+                                    Improved accessibility and visual contrast
+                                </li>
+                                <li>
+                                    Integrated lead-generation modules and consistent form logic
+                                </li>
+                                <li>
+                                    Stronger social proof through testimonials and case studies
+                                </li>
+                                <li>
+                                    Shifted content focus from hardware products to complete solutions
+                                </li>
+                            </ul>
+                            <p>
+                                <strong>
+                                    Problem statement:
+                                </strong>
+                            </p>
+                            <p>
+                                “Healthcare professionals cannot quickly understand what Rods & Cones does or
+                                how to get in touch. We must reduce cognitive load and present a clear,
+                                trustworthy product story that converts.”
+                            </p>
+                            <div>
+                                <img class="img-first hide-sm" src="../../img/projects/rods/rods_4.png"
+                                     alt="flow"/>
+                                <img class="img-first show-sm" src="../../img/projects/rods/rods_4_sm.png"
+                                     alt="flow"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="jk-section-track">
+
+                        <h2 class="header-h2 padding-top-m">
+                            Ideation
+                        </h2>
+                        <p>
+                            Mapped a simplified sitemap, redesigned flow from “tech brochure” to
+                            “problem–solution–proof–action”, and built wireframes focusing on:
+                        </p>
+                        <ul>
+                            <li>
+                                Homepage as narrative with clear CTAs
+                            </li>
+                            <li>
+                                Unified “Book a Demo” / “Contact Us” actions
+                            </li>
+                            <li>
+                                Clear above-the-fold value
+                            </li>
+                            <li>
+                                Improved case study layout with proof elements
+                            </li>
+                            <li>
+                                Accessible colour and spacing system
+                            </li>
+                            <li>
+                                Authentic, trust-building visuals
+                            </li>
+                        </ul>
+                        <img class="img-first" src="../../img/projects/rods/rods_5.png" alt="flow"/>
+                    </div>
+
+                    <div class="jk-section-track">
+                        <h2 class="header-h2 padding-top-l">Validation</h2>
+                        <p>To validate early concepts, we conducted stakeholder and team testing using interactive Figma
+                            prototypes.</p>
+                        <ul>
+                            <li>
+                                Goal: verify message clarity and conversion flow.
+                            </li>
+                            <li>
+                                Participants included marketing, founders, and CRO experts.
+                            </li>
+                            <li>
+                                Feedback confirmed faster comprehension and smoother flow between homepage, kits, and
+                                contact.
+                            </li>
+                        </ul>
+                        <img class="img-first hide-sm" src="../../img/projects/rods/rods_6.png" alt="flow"/>
+                        <img class="img-first show-sm" src="../../img/projects/rods/rods_6_sm.png"
+                             alt="flow"/>
+                        <p>
+                            <strong>
+                                Key learnings:
+                            </strong>
+                        </p>
+                        <ul>
+                            <li>
+                                The simplified menu helped users instantly locate “Products” and “Book a Demo”.
+                            </li>
+                            <li>
+                                Users understood what Rods & Cones offers within 5 seconds (on average > 10 before).
+                            </li>
+                            <li>
+                                Direct form placement on case-study pages improved intent to contact.
+                            </li>
+                        </ul>
+                        <p>
+                            This validation step shaped final design decisions before full rollout.
+                        </p>
+                    </div>
+                    <div class="jk-section-track">
+                        <h2 class="header-h2 padding-top-l">Implementation</h2>
+                        <p>The design phase combined UX documentation with high-fidelity UI execution.</p>
+                        <ul>
+                            <li>
+                                Design system creation - built a unified Figma library with typography, spacing, and CTA
+                                components
+                            </li>
+                            <li>
+                                Responsive grid setup - optimised for 1440 px desktop and 375 px mobile breakpoints
+                            </li>
+                            <li>
+                                Accessibility alignment - improved contrast ratio (AA+), focus order, and keyboard
+                                navigation support
+                            </li>
+                            <li>
+                                Visual refinement - introduced softer gradients, higher readability, and cohesive visual
+                                style
+                            </li>
+                            <li>
+                                Development collaboration - provided hand-off specs and components for integration with
+                                the existing CMS (WordPress/Sanity)
+                            </li>
+                        </ul>
+                        <p>
+                            The final UI reinforced Rods & Cones’ brand values - calm, precision, and expertise, while
+                            ensuring every user understood the product within a few seconds.
+                        </p>
+                        <img class="img-first hide-sm" src="../../img/projects/rods/rods_7.png" alt="flow"/>
+                        <img class="img-first show-sm" src="../../img/projects/rods/rods_7_sm.png"
+                             alt="flow"/>
+                    </div>
+                    <div class="jk-section-track">
+                        <h2 class="header-h2 padding-top-s">Outcome</h2>
+                        <p>
+                            <strong>
+                                The redesign success metrics:
+                            </strong>
+                        </p>
+                        <ul>
+                            <li>
+                                Demo click conversion: +12 % increase within the first quarter after launch (1.33 % →
+                                1.49 %)
+                            </li>
+                            <li>
+                                Contact engagement: users interacting with contact or demo CTAs increased by +18 %
+                            </li>
+                            <li>
+                                Improved readability & accessibility: contrast compliance and mobile performance
+                                significantly improved
+                            </li>
+                            <li>
+                                Content clarity: user feedback described the new website as “easier to navigate” and
+                                “more credible”
+                            </li>
+                            <li>
+                                Stronger brand coherence: a unified look across all kits, solutions, and case-study
+                                pages
+                            </li>
+                        </ul>
+                        <img class="img-first hide-sm" src="../../img/projects/rods/rods_8.png" alt="flow"/>
+                        <img class="img-first show-sm" src="../../img/projects/rods/rods_8_sm.png"
+                             alt="flow"/>
+                        <p>
+                            <strong>
+                                Next steps:
+                            </strong>
+                        </p>
+                        <ul>
+                            <li>
+                                Run A/B tests for navigation, CTA placement, and above-the-fold messaging
+                            </li>
+                            <li>
+                                Track user behaviour with Hotjar and Google Analytics to validate design impact
+                            </li>
+                            <li>
+                                Monitor demo form completions and scroll engagement across key pages
+                            </li>
+                        </ul>
+                        <p>
+                            <strong>
+                                Next improvements:
+                            </strong>
+                        </p>
+                        <ul>
+                            <li>
+                                Test testimonial placement and lead form clarity
+                            </li>
+                            <li>
+                                Expand solution-based storytelling across subpages
+                            </li>
+                        </ul>
+                    </div>
+                    <img class="img-first show-sm" src="../../img/projects/rods/rods_8_sma.png"
+                         alt="flow"/>
+                </div>
+            </section>
+
+            <!-- ------------------------------------PROJEKTY------------------------------------------- -->
+
+            <section class="projects-main ">
+
+                <div class="project-title section-activate">
+                <span class="title text-activate">
+                   other <br/>projects:
+                 </span>
+                </div>
+
+                <div class="projects-wrapper" id="projectsSection">
+                    <a href="/projects/moiizo" class="howerki project-one section-activate">
+                        <div class="case-study-label">
+                            <span class="case-dot">•</span>
+                            Case Study
+                        </div>
+                        <div class="project-content-wrapper">
+                            <div class="project-name text-activate-move">
+                                Moiizo
+                            </div>
+                            <div class="project-content-bottom">
+                                <div class="title-agency text-activate">
+                                    e-commerce
+                                </div>
+                                <div>•</div>
+                                <div class="title-agency text-activate">
+                                    2023
+                                </div>
+                                <div>•</div>
+                                <div class="title-agency text-activate">
+                                    GoodKarma Agency
+                                </div>
+                            </div>
+                        </div>
+                        <img class="project-bg" src="../../img/projects/thumb_moiizo.png" alt="flow"/>
+                    </a>
+
+                    <a href="/projects/bundleboon" class="howerki project-one section-activate project-push-down">
+                        <div class="case-study-label">
+                            <span class="case-dot">•</span>
+                            Case Study
+                        </div>
+                        <div class="project-content-wrapper">
+                            <div class="project-name text-activate-move">
+                                Bundleboon
+                            </div>
+                            <div class="project-content-bottom">
+                                <div class="title-agency text-activate">
+                                    e-commerce
+                                </div>
+                                <div>•</div>
+                                <div class="title-agency text-activate">
+                                    2023
+                                </div>
+                                <div>•</div>
+                                <div class="title-agency text-activate">
+                                    GoodKarma Agency
+                                </div>
+                            </div>
+                        </div>
+                        <img class="project-bg" src="../../img/projects/thumb_bundleboon.png" alt="flow"/>
+                    </a>
+
+                    <a href="/projects/app.html"
+                       class="howerki project-one section-activate project-hidden">
+                        <div class="case-study-label">
+                            <span class="case-dot">•</span>
+                            Case Study
+                        </div>
+                        <div class="project-content-wrapper">
+                            <div class="project-name text-activate-move">
+                                App name
+                            </div>
+                            <div class="project-content-bottom">
+                                <div class="title-agency text-activate">
+                                    mobile app
+                                </div>
+                                <div>•</div>
+                                <div class="title-agency text-activate setYear">
+                                    2025
+                                </div>
+                                <div>•</div>
+                                <div class="title-agency text-activate">
+                                    Side project
+                                </div>
+                            </div>
+                        </div>
+                        <img class="project-bg" src="../../img/projects/thumb_app.png" alt="flow"/>
+                    </a>
+
+                </div>
+
+            </section>
+            <!-- ------------------------------------CONTACT------------------------------------------- -->
+
+            <section class="contact section-activate">
+                <div class="contact-detail text-activate-move ">
+                    <a href="https://www.instagram.com/jagodakondratiuk/" target="_blank" class="howerki text">
+                        INSTAGRAM
+                    </a>
+                </div>
+                <div class="contact-detail text-activate-move second">
+                    <a href="https://dribbble.com/JagodaKondratiuk" target="_blank" class="howerki text">
+                        DRIBBBLE
+                    </a>
+                </div>
+                <div class="contact-detail text-activate-move third">
+                    <a href="https://www.linkedin.com/in/jagodakondratiuk/" target="_blank" class="howerki text">
+                        LINKEDIN
+                    </a>
+                </div>
+                <div class="contact-detail text-activate-move four">
+                    <a href="mailto:hello@jagodakondratiuk.com?Subject=Hello%20World" class="howerki text">
+                        MAIL
+                    </a>
+                </div>
+            </section>
+
+            <!-- ------------------------------------RIGHTS------------------------------------------- -->
+            <section class="rights-main">
+                    <span class="ja">  © <span
+                            class="setYear">2022</span>  Jagoda Kondratiuk | All rights reserved</span>
+                <span class="Tomasz">
+          <span>
+            Developed by
+          </span>
+          <a href="https://783studio.com/" target="_blank" class="tomas-link">
+            Studio 783
+          </a>
+        </span>
+            </section>
+
+            <!-- section-activate -->
+            <section id="footerParallax" class="footer">
+                <span class="to-top-link " id="scrollToTopTrigger">
+                     Back to the top
+                 </span>
+            </section>
+        </div>
+
+    </div>
+</div>
+<div id="screenLock">
+    <a href="/" class="howerki screen-lock-close">
+        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30.3525 1.41406L16.5898 15.1758L30.3525 28.9385L28.9385 30.3525L15.1758 16.5898L1.41406 30.3525L0 28.9385L13.7617 15.1758L0 1.41406L1.41406 0L15.1758 13.7617L28.9385 0L30.3525 1.41406Z"
+                  fill="#E9E9DF"/>
+        </svg>
+    </a>
+    <div class="screen-lock-content">
+        <div class="header-h1">
+            Got the
+            <br/>
+            magic word?
+        </div>
+        <div class="text-base padding-top-xs">
+            Pop the password in below to unlock the page 🔓
+        </div>
+        <div class="screen-lock-input-wrapper margin-top-l">
+            <input type="password" id="screenLockInput" placeholder="password" class=""/>
+            <button id="screenLockPassSubmit" class="howerki">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="48" height="48" rx="24" fill="#333232"/>
+                    <path d="M19 29L29 19M29 19H19M29 19V23.6429V29" stroke="#E9E9DF" stroke-width="1.5"/>
+                </svg>
+            </button>
+        </div>
+        <div class="text-base padding-top-l">
+            If you're empty-handed, no worries!<br/>Request your
+            key at <a class="howerki" href="mailto:hello@jagodakondratiuk.com">hello@jagodakondratiuk.com</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
