@@ -342,10 +342,8 @@ const activeMarginTop = 50
 const projectPageNavigationTrack = (_scrollPos) => {
     for (let i = 0; i < projectPageNavSections.length; i++) {
         if (projectPageNavSections[i].getBoundingClientRect().top < activeMarginTop && projectPageNavSections[i].getBoundingClientRect().bottom > activeMarginTop) {
-            if (currentActiveIndex !== i) {
-                currentActiveIndex = i;
-                projectPageNavItems[i].classList.add('active')
-            }
+            currentActiveIndex = i;
+            projectPageNavItems[i].classList.add('active')
         } else {
             projectPageNavItems[i].classList.remove('active')
         }
