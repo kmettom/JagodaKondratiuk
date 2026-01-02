@@ -11,14 +11,68 @@ class Scroll {
         this.key_scroll_size = 80;
         this.touchScrollSize = 20;
         this.is_disable = false;
+        this.useNativeScroll = false;
     }
 
     init(_onRenderCall) {
         this.importedOnRenderCall = _onRenderCall;
+
+        // basic mobile/touch detection
+        const isTouch =
+            "ontouchstart" in window ||
+            navigator.maxTouchPoints > 0 ||
+            navigator.msMaxTouchPoints > 0;
+
+        const isMobileUA = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+        this.useNativeScroll = isTouch && isMobileUA;
+
         this.refresh();
-        this.init_events_handlers();
-        this.render();
+
+        if (this.useNativeScroll) {
+            this.enableNativeScrollMode();
+            this.renderNative(); // keep animations updating
+        } else {
+            this.init_events_handlers();
+            this.render(); // your current smooth loop
+        }
     }
+
+    enableNativeScrollMode() {
+        // stop transform scrolling
+        this.is_disable = true;
+        this.scrl_element.style.transform = "none";
+
+        // allow native scroll
+        document.body.style.overflowY = "auto";
+        document.body.style.webkitOverflowScrolling = "touch";
+
+        // if you were using body overflow hidden somewhere, ensure it’s not:
+        // document.documentElement.style.overflow = "auto";
+    }
+
+
+    renderNative() {
+        // Keep your animation system fed with current scroll
+        let y =
+            window.scrollY ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop ||
+            0;
+
+        if (y > this.max_scroll) {
+            y = this.max_scroll;
+        }
+
+        this.Y_pos = y;
+        this.Y_dest = y; // keep consistent with desktop logic if anything references it
+
+        // still call the same hook
+        this.importedOnRenderCall();
+
+        requestAnimationFrame(this.renderNative.bind(this));
+    }
+
 
     scroll_top_slow() {
         return (this.scroll_top_speed = 50, 0 > this.Y_dest - this.scroll_top_speed) ? void (this.Y_dest = 0) : void (this.Y_dest -= this.scroll_top_speed, requestAnimationFrame(this.scroll_top_slow.bind(this)))
@@ -155,11 +209,11 @@ class Scroll {
     init_events_handlers() {
         window.addEventListener("scroll", function (_event) {
             _event.preventDefault()
-        }),
-            window.addEventListener("wheel", this.wheel_handler.bind(this), false),
-            window.addEventListener("keydown", this.keyboard_handler.bind(this)),
-            window.addEventListener("touchstart", this.touch_start_handler.bind(this)),
-            window.addEventListener("touchmove", this.touch_move_handler.bind(this))
+        })
+        window.addEventListener("wheel", this.wheel_handler.bind(this), false)
+        window.addEventListener("keydown", this.keyboard_handler.bind(this))
+        window.addEventListener("touchstart", this.touch_start_handler.bind(this))
+        window.addEventListener("touchmove", this.touch_move_handler.bind(this))
     }
 
     positionNumConvert(_yPos, _yDest, _coef) {

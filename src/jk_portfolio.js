@@ -11,7 +11,31 @@ let scrollInstance = new Scroll;
 // INIT
 /*************************** */
 
+const studio783log = () => {
+    console.log(`
+Developed by
+
+ ████ █████ █     █ ████  ███  ████
+█       █   █     █ █   █  █  █    █
+ ████   █   █     █ █    █ █ █      █
+     █  █    █   █  █   █  █  █    █
+ ████   █     ███   ████  ███  ████
+
+  ██████████   ████████     ████████
+ ░███░░░░███  ███░░░░███   ███░░░░███
+ ░░░    ███  ░███   ░███  ░░░    ░███
+       ███   ░░████████      ██████░
+      ███     ███░░░░███    ░░░░░░███
+     ███     ░███   ░███   ███   ░███
+    ███      ░░████████   ░░████████
+   ░░░        ░░░░░░░░     ░░░░░░░░
+
+  `);
+    console.log("%chttps://783studio.com", "font-size:20px; font-weight:600;");
+};
+
 const init = function () {
+    document.querySelector('body').style.height = window.innerHeight + 'px';
     setTimeout(() => {
         pageEnterAnimation();
         updateSectionPositions();
@@ -23,6 +47,7 @@ const init = function () {
     scrollToContact();
     projectPageNavItemsListen();
     projectPageScreenLockInit();
+    studio783log();
 };
 
 const darkColor = '#333232';
@@ -359,7 +384,6 @@ const PASSWORD_HASH = '787600ebe6d6c75b6bc0b2db0bfd6aeec78897b67d3192e2208bc8b71
 const projectPageScreenLockInit = () => {
 
     // hashPassword('').then((pass) => {
-    //     console.log("pass", pass)
     // })
 
     const screenLockPassSubmit = document.querySelector('#screenLockPassSubmit');

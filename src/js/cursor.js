@@ -75,7 +75,6 @@ const cursorDot = ({
             }
             el.addEventListener("mouseover", (_) => {
                 const cursorBG = getCursorBg();
-                console.log("cursorBG", cursorBG)
                 dot.style.backgroundColor = dot.backgroundColor = cursorBG;
                 // if (style.mixBlendMode) dot.style.mixBlendMode = style.mixBlendMode
                 if (style.borderColor) dot.style.borderColor = style.borderColor;
