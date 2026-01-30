@@ -545,13 +545,5 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 
-//TODO NICE TO HAVE - About and Projects navigation menu tabs with scroll anchors
-// - Transition from ScreenLock to Open - add animation before the reload - 2
-// - Header navigation layout and functionality - anchor to contact - 4
-// - Header navigation layout and functions - MVP - no About and Projects - 2
-
-
-
-
 
 
