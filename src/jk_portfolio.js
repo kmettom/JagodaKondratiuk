@@ -283,8 +283,10 @@ const activateNextSection = (_scrollPos) => {
 
 const footerSectionEl = document.getElementById('footerParallax');
 const footerAnimateIn = (_scrollPos) => {
-    let moveFooterCoef = -1 * (footerSection.top - _scrollPos - window.innerHeight) + 2; // +2 to avoid white line on the bottom
-    footerSectionEl.style.height = moveFooterCoef + 'px';
+    if (!getUserAgent.isMobile && window.innerWidth > 768) {
+        let moveFooterCoef = -1 * (footerSection.top - _scrollPos - window.innerHeight) + 2; // +2 to avoid white line on the bottom
+        footerSectionEl.style.height = moveFooterCoef + 'px';
+    }
 };
 
 const footerGoToTopBtnListen = () => {

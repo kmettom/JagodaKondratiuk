@@ -72,6 +72,9 @@
   text-align:center;
   display: block;
   overflow: hidden;
+  @include respond-width($w-s){
+    height: 105px;
+  }
   .to-top-link{
     font-family: "Monument";
     text-transform: uppercase;
