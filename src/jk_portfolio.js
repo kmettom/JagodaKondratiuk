@@ -383,9 +383,6 @@ const PASSWORD_HASH = '787600ebe6d6c75b6bc0b2db0bfd6aeec78897b67d3192e2208bc8b71
 
 const projectPageScreenLockInit = () => {
 
-    // hashPassword('').then((pass) => {
-    // })
-
     const screenLockPassSubmit = document.querySelector('#screenLockPassSubmit');
 
     if (screenLockPassSubmit) {

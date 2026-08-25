@@ -83,6 +83,11 @@ module.exports = {
             title: 'Caching',
         }),
         new HtmlWebpackPlugin({
+            template: './src/projects/vondels/index.html',
+            filename: "projects/vondels/index.html",
+            title: 'Caching',
+        }),
+        new HtmlWebpackPlugin({
             template: './src/projects/rods-and-cones/index.html',
             filename: "projects/rods-and-cones/index.html",
             title: 'Caching',
