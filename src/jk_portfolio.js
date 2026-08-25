@@ -386,11 +386,10 @@ const projectPageScreenLockInit = () => {
     const screenLockPassSubmit = document.querySelector('#screenLockPassSubmit');
 
     if (screenLockPassSubmit) {
-        const locked = window.localStorage.getItem('lockContent');
+        const locked = window.localStorage.getItem('402x');
         if (locked === 'false') {
             screenUnlock();
         } else {
-            window.localStorage.setItem('lockContent', JSON.stringify(true));
             const lockContentEl = document.querySelector('#lockContent');
             const sectionsWrapperEl = document.querySelector('.sections-wrapper');
             lockContentEl.remove();
@@ -399,7 +398,7 @@ const projectPageScreenLockInit = () => {
                 const inputValue = screenLockInput.value.trim();
                 hashPassword(inputValue).then((inputHash) => {
                     if (inputHash === PASSWORD_HASH) {
-                        window.localStorage.setItem('lockContent', JSON.stringify(false));
+                        window.localStorage.setItem('402x', JSON.stringify(false));
                         window.location.reload();
                     }
                 })
