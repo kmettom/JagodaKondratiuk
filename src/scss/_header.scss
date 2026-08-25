@@ -28,6 +28,7 @@
   .lata1 {
     position: relative;
     text-align: left;
+    .line{display: none;}
   }
 
   .line {
@@ -81,7 +82,7 @@
     opacity: 1;
 
     .line:after {
-      width: 100%;
+      //width: 100%;
     }
 
   }
