@@ -82,6 +82,31 @@ class Scroll {
         return (this.scroll_top_speed = 50, this.max_scroll > this.Y_dest + this.scroll_top_speed) ? void (this.Y_dest = this.max_scroll) : void (this.Y_dest += this.scroll_top_speed, requestAnimationFrame(this.scroll_bottom_slow.bind(this)))
     };
 
+    scroll_to_position_slow(position) {
+        this.scroll_top_speed = 50;
+
+        // Clamp target
+        if (position < 0) position = 0;
+        if (position > this.max_scroll) position = this.max_scroll;
+
+        const diff = position - this.Y_dest;
+
+        // If close enough, snap to target and stop recursion
+        if (Math.abs(diff) <= this.scroll_top_speed) {
+            this.Y_dest = position;
+            return;
+        }
+
+        // Move toward target based on direction
+        if (diff > 0) {
+            this.Y_dest += this.scroll_top_speed;
+        } else {
+            this.Y_dest -= this.scroll_top_speed;
+        }
+        
+        requestAnimationFrame(() => this.scroll_to_position_slow(position));
+    }
+
     set scrollToBottomSlow(_scrollTo) {
         // this.Y_dest = _scrollTo;
         this.scroll_bottom_slow()

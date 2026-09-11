@@ -42,6 +42,7 @@ const init = function () {
         setYear();
         writeTime();
     }, 500);
+
     cursorInit();
     footerGoToTopBtnListen();
     scrollToContact();
@@ -144,7 +145,8 @@ const pageEnterAnimation = () => {
     }, 1000)
     setTimeout(() => {
         scrollInstance.init(sectionsAnimateOnScroll);
-    }, 1500);
+        scrollToAnchor();
+    }, 2000);
 };
 
 /*************************** */
@@ -210,6 +212,18 @@ window.onresize = function (event) {
     updateSectionPositions();
     scrollInstance.max_scroll_update = window.innerHeight;
 };
+
+const scrollToAnchor = () => {
+    let params = new URLSearchParams(document.location.search);
+    const sectionId = params.get("section");
+    if (!sectionId) return;
+    const elById = document.getElementById(sectionId);
+    if (!elById) return;
+    const newPos = elById.getBoundingClientRect().top - 50 // margin;
+    if (!newPos) return;
+    scrollInstance.scroll_to_position_slow(newPos)
+
+}
 
 /*************************** */
 // Scroll interactions - CALLED FROM SCROLL CLASS -> requestAnimationFrame

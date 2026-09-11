@@ -7,7 +7,7 @@
   max-width: 1200px;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  @include respond-width($w-m){
+  @include respond-width($w-m) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
@@ -22,11 +22,11 @@
     overflow: hidden;
     border-radius: 25px;
 
-    &.project-hidden{
+    &.project-hidden {
       opacity: 0;
       pointer-events: none;
       height: 0;
-      @include respond-width($w-s){
+      @include respond-width($w-s) {
         display: none;
       }
     }
@@ -42,11 +42,21 @@
         padding-top: 12px;
       }
     }
+
+    &.project-home-link{
+      background: $blue;
+      .project-bg{
+        opacity: 0;
+      }
+      .project-name{
+        text-align: right;
+      }
+    }
   }
 
   .project-push-down {
     top: 80px;
-    @include respond-width($w-s){
+    @include respond-width($w-s) {
       top: 0;
     }
   }
@@ -61,7 +71,7 @@
     transition: ease all 0.3s;
     z-index: -1;
     height: 100%;
-    @include respond-width($w-s){
+    @include respond-width($w-s) {
       filter: initial;
     }
   }
@@ -104,7 +114,7 @@
     overflow: hidden;
     display: flex;
     justify-content: space-between;
-    @include respond-width($w-s){
+    @include respond-width($w-s) {
       height: 20px;
       padding-top: 12px;
     }
@@ -120,7 +130,13 @@
     margin-bottom: 200px;
   }
 
+  .project-link-top-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
 
+  .project-link-top-text,
   .project-name {
     font-family: "Monument";
     font-size: 28px;
