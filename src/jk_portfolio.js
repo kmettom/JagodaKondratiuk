@@ -146,7 +146,7 @@ const pageEnterAnimation = () => {
     setTimeout(() => {
         scrollInstance.init(sectionsAnimateOnScroll);
         scrollToAnchor();
-    }, 2000);
+    }, 1500);
 };
 
 /*************************** */
