@@ -222,7 +222,6 @@ const scrollToAnchor = () => {
     const newPos = elById.getBoundingClientRect().top - 50 // margin;
     if (!newPos) return;
     scrollInstance.scroll_to_position_slow(newPos)
-
 }
 
 /*************************** */

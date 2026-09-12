@@ -39,16 +39,17 @@ class Scroll {
     }
 
     enableNativeScrollMode() {
-        // stop transform scrolling
         this.is_disable = true;
         this.scrl_element.style.transform = "none";
 
-        // allow native scroll
+        // Ensure window/body can scroll
         document.body.style.overflowY = "auto";
         document.body.style.webkitOverflowScrolling = "touch";
+        document.documentElement.style.overflowY = "auto";
 
-        // if you were using body overflow hidden somewhere, ensure it’s not:
-        // document.documentElement.style.overflow = "auto";
+        // Make sure html/body height allows scrolling
+        document.body.style.height = "auto";
+        document.documentElement.style.height = "auto";
     }
 
 
@@ -83,6 +84,21 @@ class Scroll {
     };
 
     scroll_to_position_slow(position) {
+        if (this.useNativeScroll) {
+            // Clamp position
+            if (position < 0) position = 0;
+            if (position > this.max_scroll) position = this.max_scroll;
+
+            // Use window.scrollTo (not scrollY assignment)
+            window.scrollTo({
+                top: position,
+                behavior: 'smooth'
+            });
+
+            // Sync Y_dest for your animation system
+            this.Y_dest = position;
+            return;
+        }
         this.scroll_top_speed = 50;
 
         // Clamp target
@@ -103,7 +119,7 @@ class Scroll {
         } else {
             this.Y_dest -= this.scroll_top_speed;
         }
-        
+
         requestAnimationFrame(() => this.scroll_to_position_slow(position));
     }
 
