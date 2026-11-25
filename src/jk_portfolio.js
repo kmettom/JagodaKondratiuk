@@ -493,26 +493,26 @@ const meFotoParallax = function (_scrollPos) {
 class Cursor {
     constructor() {
         this.cursor = cursorDot({
-            easing: 4, diameter: 50, borderWidth: 1, borderColor: "#e2e2e2", background: "transparent",
+            easing: 4, diameter: 50, borderWidth: 1, borderColor: "#E9E9DF", background: "transparent",
         });
     }
 
     setHoversOnLoad() {
 
         this.cursor.over("#footerParallax", {
-            borderColor: "#e2e2e2",
+            borderColor: "#E9E9DF",
         });
         this.cursor.over("#scrollToTopTrigger", {
-            borderColor: "#e2e2e2", background: "#e2e2e2", mixBlendMode: "difference", scale: 1.6,
+            borderColor: "#E9E9DF", background: "#E9E9DF", mixBlendMode: "difference", scale: 1.6,
         });
         this.cursor.over(".vi-link", {
             borderColor: darkColor,
-            background: "#e2e2e2",
+            background: "#E9E9DF",
             mixBlendMode: getUserAgent.isFirefox ? "difference" : "screen",
             scale: 1.6,
         });
         this.cursor.over(".howerki", {
-            // borderColor: getUserAgent.isFirefox ? '#e2e2e2' : darkColor,
+            // borderColor: getUserAgent.isFirefox ? '#E9E9DF' : darkColor,
             mixBlendMode: getUserAgent.isFirefox ? "difference" : "screen",
             // background: getCursorBg(),
             scale: 1.6,
